@@ -1,113 +1,360 @@
-import Image from "next/image";
+'use client'
+import { TbBrandNextjs } from "react-icons/tb";
+import { SiReact } from "react-icons/si";
+import { FaNodeJs, FaRegCopy } from "react-icons/fa";
+import ButtonRGB from "@/components/ui/Buttons/ButtonRGB/ButtonRGB";
+import ButtonComponent from "@/components/ui/Buttons/Button/ButtonComponent";
+import { memo, useCallback, useEffect, useState } from "react";
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-okaidia.css';
+import './globals.css'
+import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Link, User } from "@nextui-org/react";
+import ThemeSwitcherCheckBox from "@/components/ThemeSwitcher/CheckBox/ThemeSwitcherCheckBox";
+import { TiStarFullOutline } from "react-icons/ti";
+import { FcLike } from "react-icons/fc";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
+    <>
+      <main>
+        <section >
+          <div className="flex justify-center items-center gap-[3%] px-5">
+            <Apresentação />
+            <div className="pt-[15rem]">
+              <div className="py-2">
+                <Tags />
+              </div>
+              <div className="w-[30rem] shadow-lg">
+                <CodeCard />
+              </div>
+              <ButtonsExemple />
+            </div>
+          </div>
+          <CardTwitter />
+        </section>
+        <section>
+          <div className="pt-[15rem] flex gap-12 justify-center">
+            <Fotos />
+            <Informacoes />
+          </div>
+        </section>
+      </main>
+    </>
+  )
+}
+
+function Informacoes() {
+  return (
+    <div className="flex flex-col gap-6 max-w-[32rem]">
+      <div className="flex justify-between leading-tight">
+        <div className="flex flex-col">
+          <span className="gradient-text text-md font-extrabold tracking-tight">23</span>
+          <p className="text-text">Anos</p>
+        </div>
+        <div className="flex flex-col   ">
+          <span className="gradient-text text-md font-extrabold tracking-tight ">2+</span>
+          <p className="text-text" >Anos de dev</p>
+        </div>
+        <div className="flex flex-col  ">
+          <span className="gradient-text text-md font-extrabold tracking-tight ">1</span>
+          <p className="text-text" >Amazing dog</p>
+        </div>
+        <div className="flex flex-col  ">
+          <span className="gradient-text text-md font-extrabold tracking-tight ">263</span>
+          <p className="text-text" >Commits</p>
         </div>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+      <p className="text-text" >
+        Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+        Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+        Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+      </p>
+      <p className="text-text" >
+        Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+        Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+        Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+        Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+        Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+      </p>
+      <p className="text-text" >
+        Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+      </p>
+    </div>
+  )
+}
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+interface PhotoProps {
+  index: number;
+  isHidden: boolean;
+  entranceActive: boolean;
+  active: boolean;
+  handleClick: (index: number) => void;
+  imageUrl: string;
+}
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+const Photo = memo<PhotoProps>(({ index, isHidden, entranceActive, active, handleClick, imageUrl }) => {
+  console.log('photo component')
+  const [isHovering, setIsHovering] = useState(false);
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+  const allowedRotations = [2, 3, 6, 12];
+  const rotationIndex = index % allowedRotations.length;
+  const rotationDegree = allowedRotations[rotationIndex];
+  const rotationDirection = index % 2 === 0 ? '-' : '';
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+  const handleMouseEnter = () => setIsHovering(true);
+  const handleMouseLeave = () => setIsHovering(false);
+
+  return (
+    <div onClick={() => handleClick(index)}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={`${active ? 'animate-slide' : ''} ${isHidden ? 'hidden' : ''} 
+                     ${entranceActive ? 'animate-entrance' : ''} absolute
+                     transition duration-300 ease-in-out border-2 cursor-pointer border-[#8999b3] dark:border-[#1c2636]
+                     bg-[#0F172A] rounded-[15px] shadow-large z-${40 - index * 10}`}
+      style={{
+        transform: `rotate(${isHovering ? '0' : `${rotationDirection}${rotationDegree}`}deg)`
+      }}>
+      <img src={imageUrl} alt={`Foto ${index}`} className="object-cover w-[25rem] h-[25rem] rounded-[15px]" />
+    </div>
   );
+});
+
+function Fotos() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const [hidden, setHidden] = useState<boolean[]>([false, false, false, false]);
+  const [entranceAnimation, setEntranceAnimation] = useState<boolean[]>([false, false, false, false]);
+  const [clickable, setClickable] = useState<boolean>(true);
+  console.log('Fotos component')
+
+  const imageUrls = ['foto-exemplo.webp', 'foto-exemplo.webp', 'foto-exemplo.webp', 'foto-exemplo.webp'];
+
+  const handlePhotoClick = useCallback((index: number) => {
+    if (!clickable) return;
+    setClickable(false);
+
+    setActiveIndex(index);
+    setTimeout(() => {
+      const newHidden = [...hidden];
+      newHidden[index] = true;
+      setHidden(newHidden);
+      setActiveIndex(null);
+
+      if (newHidden.every(h => h)) {
+        setHidden([false, false, false, false]);
+        setEntranceAnimation(new Array(4).fill(true));
+        setTimeout(() => setEntranceAnimation(new Array(4).fill(false)), 600);
+      }
+
+      setClickable(true);
+    }, 600);
+  }, [clickable, hidden]);
+
+  return (
+    <div className="relative w-[30rem] h-[30rem] justify-center items-center">
+      {hidden.map((isHidden, index) => (
+        <Photo
+          key={index}
+          index={index}
+          isHidden={isHidden}
+          entranceActive={entranceAnimation[index]}
+          active={index === activeIndex}
+          handleClick={handlePhotoClick}
+          imageUrl={imageUrls[index]}
+        />
+      ))}
+    </div>
+  );
+}
+
+function Apresentação() {
+  return (
+    <div className="flex flex-col max-w-[45rem]">
+      <p className="text-sm text-blue font-semibold">Bem-vindo ao meu site.</p>
+      <div className="flex flex-row">
+        <h1 className="text-xl font-extrabold leading-none tracking-tight">
+          Sou <strong className="gradient-text"> Yuri Kaffer</strong>, <br />
+          Full Stack developer.
+        </h1>
+      </div>
+      <div className="flex gap-4 py-2 text-text">
+        <div className="flex items-center gap-2">
+          <TbBrandNextjs size={'27px'} />
+          <p className="text-sm" >Next.js</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <FaNodeJs size={'27px'} />
+          <p className="text-sm" >Node.js</p>
+        </div>
+        <div className="flex items-center gap-2">
+          <SiReact size={'27px'} />
+          <p className="text-sm" >React.js</p>
+        </div>
+      </div>
+      <div className="flex flex-col gap-4 pt-1 text-text">
+        <p className="text-sm">
+          Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+          Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+          Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+        </p>
+        <p className="text-sm">
+          Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+          Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+        </p>
+      </div>
+
+      <div className="flex gap-5 pt-4">
+        <ButtonRGB name="Let's Talk" />
+        <ButtonComponent name="Resume" />
+      </div>
+    </div>
+  )
+}
+
+function CardTwitter() {
+  return (
+    <div className="absolute  top-[67%] right-[40%] transform -translate-y-1/2 z-50 floating">
+      <Card className=" border-2 border-[#dbdee2] rounded-[7px] dark:border-[#424E61] max-w-[24rem] bg-[#ffffff] dark:bg-[#1E293B] shadow-lg bg-opacity-80 backdrop-blur">
+        <CardHeader className="flex justify-between">
+          <UserCard />
+          <Button variant="solid" className="rounded-full h-7 bg-[#057BB9] text-white">
+            Follow
+          </Button>
+        </CardHeader>
+        <CardBody className="text-text text-[12px]">
+          <p>
+            Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+            Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+          </p>
+        </CardBody>
+        <CardFooter className="flex gap-4 text-[14px] text-text">
+          <div className="flex gap-2">
+            <p className="font-semibold">210</p>
+            <p>Following</p>
+          </div>
+          <div className="flex gap-2">
+            <p className="font-semibold">51</p>
+            <p>Followers</p>
+          </div>
+        </CardFooter>
+      </Card>
+    </div>
+  );
+}
+
+function UserCard() {
+  return (
+    <User className="font-semibold"
+      name="Yuri Kaffer"
+      description={(
+        <Link className="text-text font-normal" href="" size="sm" >
+          @yuri_kaffer
+        </Link>
+      )}
+      avatarProps={{
+        src: "https://avatars.githubusercontent.com/u/303714325?v=4",
+        className: "border-2 border-[#dbdee2] dark:border-[#424E61]"
+      }}
+    />
+  )
+}
+
+function ButtonsExemple() {
+  return (
+    <div className="flex gap-2 items-center pt-4 justify-start pl-[3.5rem] ">
+      <Button className="rounded-full h-8 dark:bg-[#0F172A] dark:border-[#1c2636]" variant="faded">
+        <FcLike className="w-full h-4" />
+        <p className="text-xsm">Like</p>
+      </Button>
+      <Button isIconOnly className="rounded-[100%] min-w-0 min-h-0 w-8 h-8 dark:border-[#1c2636] hover:bg-[#DD9520] dark:hover:bg-[#DD9520] hover:text-[#f0f0f3] dark:hover:text-[#27272A] dark:bg-[#0F172A]" color="warning" variant="faded">
+        <TiStarFullOutline className="w-full h-4" />
+      </Button>
+      <ThemeSwitcherCheckBox />
+    </div>
+  )
+}
+
+function CodeCard() {
+  return (
+    <div className="border-2 border-[#8999b3] dark:border-[#1c2636] bg-[#0F172A] rounded-[7px] shadow-large">
+      <div className="px-2 py-1">
+        <div className="flex flex-col">
+          <div className="flex justify-between items-center p-1">
+            <div className="flex gap-1 items-center">
+              <div className="bg-[#334155] w-3 h-3 rounded-full hover:bg-red-500 hover:cursor-pointer" />
+              <div className="bg-[#334155] w-3 h-3 rounded-full hover:bg-yellow-500 hover:cursor-pointer " />
+              <div className="bg-[#334155] w-3 h-3 rounded-full hover:bg-green-500 hover:cursor-pointer " />
+            </div>
+            <div>
+              <p className="text-xsm text-[#526175] font-medium">/index.tsx</p>
+            </div>
+            <FaRegCopy className="cursor-pointer text-[#334155] hover:text-[#78889e]" />
+          </div>
+          <div>
+            <Divider orientation="horizontal" className="mt-1 bg-[#202835] " />
+          </div>
+        </div>
+        <div>
+          <CodeBlock />
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const CodeBlock = () => {
+  useEffect(() => {
+    Prism.highlightAll();
+  }, []);
+
+  return (
+    <pre className="custom-pre custom-scroll">
+      <code className="custom-code language-javascript">
+        {
+          `import { FC } from "react";
+
+type WelcomeProps = {
+  uses: 
+    | "explore new tech"
+    | "display my skills"
+    | "find freelancing opportunities"
+    | "find a fulltime job";
+};
+
+type WelcomeProps = {
+  uses: 
+    | "explore new tech"
+    | "display my skills"
+    | "find freelancing opportunities"
+    | "find a fulltime job";
+};
+
+console.log('Hello, world!');
+        `}
+      </code>
+    </pre>
+  );
+};
+
+const Tags = () => {
+  return (
+    <div className="flex gap-2 justify-end">
+      <button className="border-2 bg-blue-bg rounded-md border-blue-border hover:bg-blue-hover">
+        <p className="text-xsm text-[#1c3e5f] dark:text-white px-2 opacity-70">Gamer</p>
+      </button>
+      <button className="border-2 bg-orange-bg rounded-md border-orange-border hover:bg-orange-hover">
+        <p className="text-xsm text-[#4d2f1c] dark:text-white px-2 opacity-70">Gamer</p>
+      </button>
+      <button className="border-2 bg-green-bg rounded-md border-green-border hover:bg-green-hover">
+        <p className="text-xsm text-[#133a23] dark:text-white px-2 opacity-70">Gamer</p>
+      </button>
+      <button className="border-2 bg-pink-bg rounded-md border-pink-border hover:bg-pink-hover">
+        <p className="text-xsm text-[#881f5c] dark:text-white px-2 opacity-70">Gamer</p>
+      </button>
+      <button className="border-2 bg-gray-bg rounded-md border-gray-border hover:bg-gray-hover">
+        <p className="text-xsm text-[#14181b] dark:text-white px-2 opacity-70">Gamer</p>
+      </button>
+    </div>
+  )
 }

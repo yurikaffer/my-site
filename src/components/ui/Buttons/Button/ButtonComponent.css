@@ -1,0 +1,15 @@
+.button-style {
+    position: relative;
+    border: 2px solid rgb(112, 112, 112);
+    padding: 7px 40px;
+    border-radius: 8px;
+    text-align: center;
+    display: inline-block;
+    transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.button-style:hover {
+    border-color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 255);
+    transform: scale(1.03);
+}
