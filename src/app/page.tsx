@@ -4,7 +4,7 @@ import { SiReact } from "react-icons/si";
 import { FaNodeJs, FaRegCopy } from "react-icons/fa";
 import ButtonRGB from "@/components/ui/Buttons/ButtonRGB/ButtonRGB";
 import ButtonComponent from "@/components/ui/Buttons/Button/ButtonComponent";
-import { memo, useCallback, useEffect, useState } from "react";
+import { memo, useCallback, useEffect, useRef, useState } from "react";
 import Prism from 'prismjs';
 import 'prismjs/themes/prism-okaidia.css';
 import './globals.css'
@@ -38,8 +38,71 @@ export default function Home() {
             <Informacoes />
           </div>
         </section>
+        <section>
+          <div className="py-[10rem]">
+            <Carousel />
+          </div>
+        </section>
       </main>
     </>
+  )
+}
+
+function Carousel() {
+  const carouselRef = useRef(null);
+
+  const scrollLeft = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: -435, behavior: 'smooth' });
+    }
+  }
+
+  const scrollRight = () => {
+    if (carouselRef.current) {
+      carouselRef.current.scrollBy({ left: 435, behavior: 'smooth' });
+    }
+  }
+
+  return (
+    <div className="relative">
+      <button
+        onClick={scrollLeft}
+        className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 text-black"
+      >
+        {'<'}
+      </button>
+      <div className="flex overflow-x-hidden gap-4 p-4" ref={carouselRef}>
+        <div className='transition duration-300 ease-in-out border-2 cursor-pointer border-[#8999b3] dark:border-[#1c2636] bg-[#0F172A] rounded-[15px] shadow-lg'>
+          <img src='foto-exemplo.webp' alt='Foto' className="object-cover min-w-[25rem] min-h-[25rem] rounded-[15px]" />
+        </div>
+        <div className='transition duration-300 ease-in-out border-2 cursor-pointer border-[#8999b3] dark:border-[#1c2636] bg-[#0F172A] rounded-[15px] shadow-lg'>
+          <img src='foto-exemplo.webp' alt='Foto' className="object-cover min-w-[25rem] min-h-[25rem] rounded-[15px]" />
+        </div>
+        <div className='transition duration-300 ease-in-out border-2 cursor-pointer border-[#8999b3] dark:border-[#1c2636] bg-[#0F172A] rounded-[15px] shadow-lg'>
+          <img src='foto-exemplo.webp' alt='Foto' className="object-cover min-w-[25rem] min-h-[25rem] rounded-[15px]" />
+        </div>
+        <div className='transition duration-300 ease-in-out border-2 cursor-pointer border-[#8999b3] dark:border-[#1c2636] bg-[#0F172A] rounded-[15px] shadow-lg'>
+          <img src='foto-exemplo.webp' alt='Foto' className="object-cover min-w-[25rem] min-h-[25rem] rounded-[15px]" />
+        </div>
+        <div className='transition duration-300 ease-in-out border-2 cursor-pointer border-[#8999b3] dark:border-[#1c2636] bg-[#0F172A] rounded-[15px] shadow-lg'>
+          <img src='foto-exemplo.webp' alt='Foto' className="object-cover min-w-[25rem] min-h-[25rem] rounded-[15px]" />
+        </div>
+        <div className='transition duration-300 ease-in-out border-2 cursor-pointer border-[#8999b3] dark:border-[#1c2636] bg-[#0F172A] rounded-[15px] shadow-lg'>
+          <img src='foto-exemplo.webp' alt='Foto' className="object-cover min-w-[25rem] min-h-[25rem] rounded-[15px]" />
+        </div>
+        <div className='transition duration-300 ease-in-out border-2 cursor-pointer border-[#8999b3] dark:border-[#1c2636] bg-[#0F172A] rounded-[15px] shadow-lg'>
+          <img src='foto-exemplo.webp' alt='Foto' className="object-cover min-w-[25rem] min-h-[25rem] rounded-[15px]" />
+        </div>
+
+
+      </div>
+      <button
+        onClick={scrollRight}
+        className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white rounded-full p-2 text-black"
+      >
+        {'>'}
+      </button>
+    </div>
   )
 }
 
