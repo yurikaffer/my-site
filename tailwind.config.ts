@@ -1,4 +1,3 @@
-import { colors } from '@nextui-org/react';
 import type { Config } from 'tailwindcss'
 const { nextui } = require("@nextui-org/react");
 
@@ -22,7 +21,8 @@ const config: Config = {
       },
       colors: {
         'blue': '#23ADEB',
-        'white': '#F8FAFC'
+        'white': '#FFF',
+        'black-txt': '#11181C',
       },
       backdropFilter: {
         'none': 'none',
@@ -44,6 +44,9 @@ const config: Config = {
         light: {
           colors: {
             'text': '#637184',
+            'border': '#dbdee2',
+            'bg': '#ffffff',
+
             blue: {
               bg: "#CFFAFE",
               hover: "#ACF3FB",
@@ -70,12 +73,13 @@ const config: Config = {
               border: "#C1C8D2",
             },
 
-
           }
         },
         dark: {
           colors: {
             'text': '#A4ADB9',
+            'border': '#424E61',
+            'bg': '#1E293B',
             blue: {
               bg: "#285F72",
               hover: "#3C798B",
@@ -101,6 +105,7 @@ const config: Config = {
               hover: "#474E5E",
               border: "#1c2636",
             },
+
           }
         },
       },

@@ -96,3 +96,23 @@ body {
     opacity: 1;
   }
 }
+
+.cardPurple {
+  background: linear-gradient( #8c8afc, #282781);
+}
+
+.cardRed {
+  background: linear-gradient( #ff4242, #6d0315);
+}
+
+.cardBlue {
+  background: linear-gradient( #51DAF1, #135763);
+}
+
+.cardPink {
+  background: linear-gradient( #fa6fc2, #5e2647);
+}
+
+.cardGreen {
+  background: linear-gradient( #00ffd5, #14574c);
+}
