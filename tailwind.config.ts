@@ -16,7 +16,7 @@ const config: Config = {
       fontSize: {
         'xsm': '14px',
         'sm': '18px',
-        'xl': '64px',
+        'xl': '72px',
         'md': '42px'
       },
       colors: {
@@ -28,6 +28,12 @@ const config: Config = {
         'none': 'none',
         'blur': 'blur(10px)',
       },
+      boxShadow: {
+        'custom': '3px 3px 26px -8px rgba(35,173,235,0.5)'
+      },
+      transitionDuration: {
+        'custom': '300ms'
+      }
     },
   },
   darkMode: "class",
@@ -46,6 +52,7 @@ const config: Config = {
             'text': '#637184',
             'border': '#dbdee2',
             'bg': '#ffffff',
+            'active-tag': '#000',
 
             blue: {
               bg: "#CFFAFE",
@@ -78,8 +85,9 @@ const config: Config = {
         dark: {
           colors: {
             'text': '#A4ADB9',
-            'border': '#424E61',
-            'bg': '#1E293B',
+            'border': '#1c2636',
+            'bg': '#0F172A',
+            'active-tag': '#FFF',
             blue: {
               bg: "#285F72",
               hover: "#3C798B",

@@ -4,6 +4,7 @@ import './globals.css'
 import { Providers } from './provider'
 import NavbarComponent from '@/components/Navbar'
 import BgLayoutRoot from '@/components/BgLayoutRoot/BgLayoutRoot'
+import Footer from '@/components/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default function RootLayout({
               <div className='z-10'>
                 {children}
               </div>
+              <Footer/>
             </BgLayoutRoot>
           </Providers>
       </body>

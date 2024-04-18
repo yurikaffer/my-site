@@ -1,6 +1,5 @@
 .gradient-shadow {
     position: relative;
-    border: 2px solid rgb(112, 112, 112);
     padding: 7px 40px;
     border-radius: 8px;
     text-align: center;
@@ -38,7 +37,5 @@
 }
 
 .gradient-shadow:hover {
-    border-color: rgba(255, 255, 255, 0.8);
-    color: rgba(255, 255, 255, 255);
     transform: scale(1.03);
 }

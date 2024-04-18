@@ -32,7 +32,7 @@ const ThemeSwitcherButton: FC = () => {
 
   return (
     <motion.button
-      className="icon-button relative transition-all h:!text-orange-600 h:shadow-glowLight dark:h:!text-sky-500 dark:h:shadow-glowDark"
+      className="icon-button relative transition-all "
       name="ThemeSwitcherButton"
       onClick={() => {
         setTheme(isDark ? "light" : "dark");
@@ -40,8 +40,8 @@ const ThemeSwitcherButton: FC = () => {
       animate={isDark ? "checked" : "unchecked"}
     >
       <motion.svg
-        width="18"
-        height="18"
+        width="20"
+        height="20"
         viewBox="0 0 25 25"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
