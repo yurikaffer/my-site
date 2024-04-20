@@ -79,18 +79,17 @@ function Apresentação() {
         </div>
       </div>
       <div className="flex flex-col gap-4 pt-1 text-text max-w-[45rem]">
-        <p className="text-[16px]">
-          Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
-          Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
-          Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+        <p className="text-[16px] italic">
+          Um mero entusiasta da tecnologia. Curioso, autodidata, proativo e sedento pelo próximo desafio.
         </p>
         <p className="text-[16px]">
-          Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
-          Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+          Profissionalmente falando, me considero um desenvolvedor em transição, focado em direcionar minha carreira para a 
+          especialização em tecnologias como Node.js, React.js e TypeScript, aprofundando meu conhecimento nessas ferramentas 
+          para ser capaz de desenvolver soluções modernas, performáticas e capazes de proporcionar uma experiência única.
         </p>
       </div>
 
-      <div className="flex gap-5 pt-4">
+      <div className="flex gap-5 pt-5">
         <ButtonRGB name="Let's Talk" />
         <ButtonComponent name="Resume" />
       </div>

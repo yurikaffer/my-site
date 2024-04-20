@@ -6,7 +6,7 @@ export default function Photos() {
     const [entranceAnimation, setEntranceAnimation] = useState<boolean[]>([false, false, false, false]);
     const [clickable, setClickable] = useState<boolean>(true);
 
-    const imageUrls = ['foto-exemplo.webp', 'foto-exemplo.webp', 'foto-exemplo.webp', 'foto-exemplo.webp'];
+    const imageUrls = ['escola.jpeg', 'mary.jpeg', 'familia.jpeg', 'amigos.jpeg', 'praiano.jpeg', 'aventureiro.jpeg'];
 
     const handlePhotoClick = useCallback((index: number) => {
         if (!clickable) return;
@@ -20,9 +20,9 @@ export default function Photos() {
             setActiveIndex(null);
 
             if (newHidden.every(h => h)) {
-                setHidden([false, false, false, false]);
-                setEntranceAnimation(new Array(4).fill(true));
-                setTimeout(() => setEntranceAnimation(new Array(4).fill(false)), 600);
+                setHidden([false, false, false, false, false, false]);
+                setEntranceAnimation(new Array(6).fill(true));
+                setTimeout(() => setEntranceAnimation(new Array(6).fill(false)), 600);
             }
 
             setClickable(true);
@@ -77,7 +77,7 @@ const Photo = memo<PhotoProps>(({ index, isHidden, entranceActive, active, handl
             style={{
                 transform: `rotate(${isHovering ? '0' : `${rotationDirection}${rotationDegree}`}deg)`
             }}>
-            <img src={imageUrl} alt={`Foto ${index}`} className="object-cover w-[100vw] sm:w-[30rem]  max-h-[25rem] rounded-[15px]" />
+            <img src={imageUrl} alt={`Foto ${index}`} className="object-cover w-[100vw] sm:w-[30rem]  max-h-[14rem] sm:max-h-[25rem] xl:max-h-[25rem] rounded-[15px]" />
         </div>
     );
 });
