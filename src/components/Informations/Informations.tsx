@@ -30,7 +30,7 @@ export default function Informations() {
             Tive acesso ao computador desde muito cedo, e claro, foi através dos jogos e do fascínio por mundos virtuais 
             que fui introduzido a esse vasto universo binário da tecnologia. Talvez eu fosse um clássico nerd da 
             informática, mas foi essa criação que, futuramente, me fez querer trabalhar com tecnologia (sem fazer a menor 
-            ideia de que existia código). Muito tempo depois, a programação entrou na minha vida como uma profissão e 
+            ideia do que seria um código). Muito tempo depois, a programação entrou na minha vida como uma profissão e 
             como uma ferramenta auxiliar para entender o mundo e o porquê das coisas.
           </p>
           <p className="text-text" >

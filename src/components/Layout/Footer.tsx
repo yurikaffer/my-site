@@ -4,7 +4,7 @@ import { FaLinkedin } from "react-icons/fa"
 
 const Footer = () => {
   return (
-    <footer className="dark:bg-[#04060c]" >
+    <footer className="absolute bottom-0 w-full dark:bg-[#04060c]" >
       <div className="w-full p-[2rem] flex justify-center">
         <div className="flex justify-between w-[78rem]">
           <p className="text-text">© 2024 Yuri Kaffer, Todos os direitos reservados.</p>
@@ -28,10 +28,8 @@ const Footer = () => {
               <FaLinkedin className="w-5 h-5"/>
             </Link>
           </div>
-
         </div>
       </div>
-
     </footer>
   )
 }
