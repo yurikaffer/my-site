@@ -24,10 +24,10 @@ export default function Home() {
     <main>
       <BgLayoutRoot>
         <div className="z-10">
-          <NavbarComponent />
-          <section className="xl:h-[100vh]">
+        <NavbarComponent />
+          <section className="xl:h-screen ">
             <div className="flex justify-center">
-              <div className="flex flex-col pt-[8rem] w-[100vw] xl:flex-row xl:justify-between xl:max-w-[80rem] xl:pt-[14rem] xl:px-0">
+              <div className="flex flex-col pt-[4rem] w-[100vw] xl:flex-row xl:justify-between xl:max-w-[80rem] xl:px-0 xl:pt-[8rem]">
                 <Apresentação />
                 <div >
                   <Tags />
@@ -42,14 +42,14 @@ export default function Home() {
           </section>
 
           <section id="about" className="relative dark:bg-[#04060c]">
-            <div className="flex justify-center pt-[10rem] w-full">
+            <div className="flex justify-center pt-[2rem] w-full">
               <div className=" flex flex-col gap-20 px-[1rem] max-w-[80rem] justify-center items-center xl:flex-row xl:px-0">
                 <Photos />
                 <Informations />
               </div>
             </div>
             <div className="absolute -top-10 -left-20 h-[25rem] md:h-[35rem] md:-left-10 xl:-top-40 xl:left-[10rem]">
-              <img src="blue-purple-1.svg" className="relative rounded-large h-full "></img>
+              <img src="blue-purple-1.svg" className="relative rounded-large h-full z-0"></img>
             </div>
           </section>
 
@@ -112,7 +112,7 @@ function Apresentação() {
 
 function CardTwitter() {
   return (
-    <div className="absolute hidden xl:flex xl:top-[74%] xl:right-[42%]  z-50 floating shadow-custom rounded-[7px]">
+    <div className="absolute hidden xl:flex xl:top-[67%] xl:right-[42%]  z-50 floating shadow-custom rounded-[7px]">
       <Card className="border-2 border-border rounded-[7px] max-w-[24rem] bg-bg bg-opacity-80 backdrop-blur">
         <CardHeader className="flex justify-between">
           <UserCard />

@@ -10,6 +10,7 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      scrollbar: ['rounded'],
       fontFamily: {
         'default': ['Inter', 'sans-serif'],
       },
@@ -33,15 +34,16 @@ const config: Config = {
       },
       transitionDuration: {
         'custom': '300ms'
-      }
+      },
     },
   },
   darkMode: "class",
   plugins: [
+    require('tailwind-scrollbar'),
     require('tailwindcss-filters'),
     function({ addBase, theme }: { addBase: any, theme: any }) {
       addBase({
-        'html, body': { padding: 0, margin: 0, fontFamily: theme('fontFamily.default') },
+        'html, body': { padding: 0, margin: 0, fontFamily: theme('fontFamily.default'),  },
         '*, *::before, *::after': { boxSizing: 'border-box' },
       });
     },
