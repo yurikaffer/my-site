@@ -24,12 +24,6 @@ export default function Carousel() {
                             All Projects
                         </button>
                         <button
-                            className={`rounded-full border-1 transition duration-custom border-border bg-[#F4F6F8] dark:bg-bg px-4 py-[2px] text-xsm font-semibold ${activeButton === 'Typescript' ? 'text-active-tag' : 'text-[#696969] dark:text-text'} dark:hover:text-active-tag hover:text-active-tag`}
-                            onClick={() => handleButtonClick('Typescript')}
-                        >
-                            Typescript
-                        </button>
-                        <button
                             className={`rounded-full border-1 transition duration-custom border-border bg-[#F4F6F8] dark:bg-bg px-4 py-[2px] text-xsm font-semibold ${activeButton === 'Next.js' ? 'text-active-tag' : 'text-[#696969] dark:text-text'} dark:hover:text-active-tag hover:text-active-tag`}
                             onClick={() => handleButtonClick('Next.js')}
                         >
@@ -89,48 +83,55 @@ function CardCarousel({ activeButton }: CardCarouselProps) {
     const projects = [
         {
             img: "site-apresentacao.png",
-            description: "Teste description Teste description Teste description Teste description Teste description Teste description Teste description",
+            description: "Projeto front-end com o objetivo de estudar as tecnologias utilizadas e expor o meu trabalho de forma estratégica na web.",
             tags: ['Next.js', 'React.js', 'Tailwind', 'NextUI'],
-            title: "Portfolio",
-            demo: "teste",
-            git: "teste",
-            style: "cardPurple"
-        },
-        {
-            img: "site-apresentacao.png",
-            description: "Teste description Teste description Teste description Teste description Teste description Teste description Teste description",
-            tags: ['React.js', 'Typescript', 'Mui'],
-            title: "Site tec",
+            title: "Portfólio",
             demo: "teste",
             git: "teste",
             style: "cardRed"
         },
         {
             img: "site-apresentacao.png",
-            description: "Teste description Teste description Teste description Teste description Teste description Teste description Teste description",
-            tags: ['Nest.js', 'TypeORM', 'React.js', 'Mui'],
-            title: "Rede social",
-            demo: "teste",
-            git: "teste",
-            style: "cardBlue"
+            description: "Esse é um projeto comercial real com o propósito de ajudar a empresa a construir uma identidade digital e otimizar vendas.",
+            tags: ['React.js', 'Typescript', 'Mui'],
+            title: "Tec Embalagens",
+            demo: "https://tecembalagens.com.br/",
+            git: "https://github.com/yurikaffer/site-tec",
+            style: "cardBlue  "
         },
         {
-            img: "site-apresentacao.png",
-            description: "Teste description Teste description Teste description Teste description Teste description Teste description Teste description",
-            tags: ['Typescript', 'Next.js', 'React.js', 'Mui'],
-            title: "Titulo 3",
-            demo: "teste",
-            git: "teste",
+            img: "price-of-life.png",
+            description: "Price of Life é uma ideia de aplicativo que tem como propósito promover uma mudança de perspectiva em relação ao dinheiro.",
+            tags: ['Next.js', 'React.js', 'Typescript', 'Mui'],
+            title: "Price of Life",
+            demo: "https://price-of-life.vercel.app/",
+            git: "https://github.com/yurikaffer/price-of-life",
+            style: "cardGreen"
+        },
+        {
+            img: "rede-social.png",
+            description: "Esse projeto teve o propósito de estudar as tecnologias utilizadas, a estrutura de um projeto Full-Stack Node e o relecionamento de dados.",
+            tags: ['Nest.js', 'TypeORM', 'React.js', 'Node.js'],
+            title: "Rede Social",
+            demo: "https://rede-social-frontend.vercel.app/",
+            git: "https://github.com/yurikaffer/rede-social-frontend",
             style: "cardPink"
         },
         {
-            img: "site-apresentacao.png",
-            description: "Teste description Teste description Teste description Teste description Teste description Teste description Teste description",
-            tags: ['Adonis.js', 'Next.js', 'React.js', 'Mui'],
-            title: "Titulo 4",
-            demo: "teste",
-            git: "teste",
-            style: "cardGreen"
+            img: "gamehub.png",
+            description: "Um projeto Full-Stack simples com funcionalidades de CRUD. Desenvolvido com o propósito de estudar as tecnologias utilizadas.",
+            tags: ['Adonis.js', 'Node.js', 'React.js', 'TypeScript'],
+            title: "Game Hub",
+            git: "https://github.com/yurikaffer/game-hub-frontend",
+            style: "cardPurple "
+        },
+        {
+            img: "todo-list.png",
+            description: "Um projeto Full-Stack simples com funcionalidades de CRUD. Desenvolvido com o propósito de estudar as tecnologias utilizadas.",
+            tags: ['Adonis.js', 'Node.js', 'React.js', 'TypeScript'],
+            title: "Desafio toDo List",
+            git: "https://github.com/yurikaffer/frontend-challenge-to-do-list",
+            style: "cardDark "
         }
     ];
 
@@ -185,7 +186,7 @@ interface CardProjectProps {
 function CardProject({ img, title, description, tags, git, demo, style }: CardProjectProps) {
     return (
         <div className={`${style} min-w-[21rem] lg:max-w-[25rem] lg:min-w-[26rem] p-[1rem] rounded-large transition duration-custom lg:hover:-translate-y-3 `}>
-            <img src={img} alt={'imagem' + title} className="object-cover rounded-large [mask-image:linear-gradient(180deg,#fff_56.35%,rgb(255_255_255_/_0%)_96.00%)]" />
+            <img src={img} alt={'imagem' + title} className="object-cover h-full max-h-[13rem] w-full rounded-large [mask-image:linear-gradient(180deg,#fff_56.35%,rgb(255_255_255_/_0%)_96.00%)]" />
             <div className="pt-4 flex flex-col gap-2 ">
                 <h3 className="text-[24px] font-extrabold text-white opacity-95 ">{title}</h3>
                 <div className="flex gap-2">
@@ -244,7 +245,7 @@ interface TagProps {
 function Tag({ name }: TagProps) {
     return (
         <div className="bg-[#dad9d9] rounded transition duration-custom hover:bg-opacity-50 bg-opacity-30 border-[1.5px] border-[#000000] border-opacity-20">
-            <p className="text-[13px] text-white px-2 py-1 font-semibold opacity-90 pointer-events-none">{name}</p>
+            <p className="text-[13px] text-white px-2 py-[2px] font-semibold opacity-90 pointer-events-none">{name}</p>
         </div>
     )
 }

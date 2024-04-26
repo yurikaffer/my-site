@@ -24,7 +24,7 @@ export default function Home() {
     <main>
       <BgLayoutRoot>
         <div className="z-10">
-        <NavbarComponent />
+          <NavbarComponent />
           <section className="xl:h-screen ">
             <div className="flex justify-center">
               <div className="flex flex-col pt-[4rem] w-[100vw] xl:flex-row xl:justify-between xl:max-w-[80rem] xl:px-0 xl:pt-[8rem]">
@@ -56,9 +56,9 @@ export default function Home() {
           <section id="projects" className="relative dark:bg-[#04060c]">
             <Carousel />
           </section>
-          
+
           <div className="relative pt-[5rem]">
-            <Footer/>
+            <Footer />
           </div>
 
         </div>
@@ -93,18 +93,18 @@ function Apresentação() {
       </div>
       <div className="flex flex-col gap-4 pt-1 text-text max-w-[45rem]">
         <p className="text-[16px] italic">
-          Um mero entusiasta da tecnologia. Curioso, autodidata, proativo e sedento pelo próximo desafio.
+          Um mero entusiasta da tecnologia. Curioso, proativo e buscando pelo próximo desafio.
         </p>
         <p className="text-[16px]">
-          Profissionalmente falando, me considero um desenvolvedor em transição, focado em direcionar minha carreira para a 
-          especialização em tecnologias como Node.js, React.js e TypeScript, aprofundando meu conhecimento nessas ferramentas 
+          Profissionalmente, me considero um desenvolvedor em transição, focado em direcionar minha carreira para a
+          especialização em tecnologias como Node.js, React.js e TypeScript, aprofundando meu conhecimento nessas ferramentas
           para ser capaz de desenvolver soluções modernas, performáticas e capazes de proporcionar uma experiência única.
         </p>
       </div>
 
       <div className="flex gap-5 pt-5">
-        <ButtonRGB name="Let's Talk" />
-        <ButtonComponent name="Resume" />
+        <ButtonRGB name="Vamos Conversar" />
+        <ButtonComponent name="Resumo" />
       </div>
     </div>
   )
@@ -116,14 +116,22 @@ function CardTwitter() {
       <Card className="border-2 border-border rounded-[7px] max-w-[24rem] bg-bg bg-opacity-80 backdrop-blur">
         <CardHeader className="flex justify-between">
           <UserCard />
-          <Button variant="solid" className="rounded-full h-7 bg-[#057BB9] text-white">
-            Follow
+          <Button variant="solid" className="rounded-full h-7 bg-[#057BB9] ">
+            <Link
+              className="text-white text-[15px]"
+              href='https://www.linkedin.com/in/yuri-k-a97755133/'
+              referrerPolicy="no-referrer"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Follow
+            </Link>
           </Button>
         </CardHeader>
-        <CardBody className="text-text text-[12px]">
+        <CardBody className="text-text text-[14px]">
+          <p> Certamente este não é o Twitter. 🙃 </p>
           <p>
-            Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
-            Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri Yuri yuri yuri yuri
+            Mas você pode se conectar comigo através do Linkedin clicando em algum lugar deste card.
           </p>
         </CardBody>
         <CardFooter className="flex gap-4 text-[14px] text-text">
@@ -146,7 +154,13 @@ function UserCard() {
     <User className="font-semibold"
       name="Yuri Kaffer"
       description={(
-        <Link className="text-text font-normal" href="" size="sm" >
+        <Link 
+          className="text-text font-normal" 
+          href='https://www.linkedin.com/in/yuri-k-a97755133/'
+          referrerPolicy="no-referrer"
+          target="_blank"
+          rel="noreferrer" size="sm" 
+        >
           @yuri_kaffer
         </Link>
       )}
@@ -177,7 +191,7 @@ function ButtonsExemple() {
 
 function CodeCard() {
   return (
-    <div className="border-2 border-border bg-[#0F172A] rounded-[7px] shadow-large w-full xl:min-w-[32rem]">
+    <div className="border-2 border-border bg-[#0F172A] rounded-[7px] shadow-large w-full max-w-[32rem] xl:min-w-[32rem]">
       <div className="px-2 py-1">
         <div className="flex flex-col">
           <div className="flex justify-between items-center p-1">
@@ -215,23 +229,26 @@ const CodeBlock = () => {
           `import { FC } from "react";
 
 type WelcomeProps = {
-  uses: 
-    | "explore new tech"
-    | "display my skills"
-    | "find freelancing opportunities"
-    | "find a fulltime job";
+    uses:
+    | "me conhecer um pouquinho melhor"
+    | "explorar meus projetos"
+    | "encontrar o dev que está procurando"
+    | "entrar em contato comigo <3";
 };
 
-type WelcomeProps = {
-  uses: 
-    | "explore new tech"
-    | "display my skills"
-    | "find freelancing opportunities"
-    | "find a fulltime job";
-};
+const Welcome: React.FC<WelcomeProps> = ({ uses }) => {
+    return (
+        <>
+            <h1>Bem vindo ao meu site!</h1>
+            <p>
+                Aqui você pode <em>{uses}</em>
+            </p>
+        </>
+    )
+}
 
-console.log('Hello, world!');
-        `}
+export default Welcome`
+        }
       </code>
     </pre>
   );
@@ -241,19 +258,19 @@ const Tags = () => {
   return (
     <div className="relative flex px-[1rem] overflow-x-auto gap-2 justify-start py-4 whitespace-nowrap xl:pt-[4rem] xl:py-0 xl:justify-end">
       <button className="transition duration-custom border-2 bg-blue-bg rounded-md border-blue-border hover:bg-blue-hover">
-        <p className="text-xsm text-[#1c3e5f] dark:text-white px-2 opacity-70">Gamer</p>
+        <p className="text-xsm text-[#1c3e5f] dark:text-white px-2 opacity-70">Dev</p>
       </button>
       <button className="transition duration-custom border-2 bg-orange-bg rounded-md border-orange-border hover:bg-orange-hover">
         <p className="text-xsm text-[#4d2f1c] dark:text-white px-2 opacity-70">Gamer</p>
       </button>
       <button className="transition duration-custom border-2 bg-green-bg rounded-md border-green-border hover:bg-green-hover">
-        <p className="text-xsm text-[#133a23] dark:text-white px-2 opacity-70">Gamer</p>
+        <p className="text-xsm text-[#133a23] dark:text-white px-2 opacity-70">Explorador</p>
       </button>
       <button className="transition duration-custom border-2 bg-pink-bg rounded-md border-pink-border hover:bg-pink-hover">
-        <p className="text-xsm text-[#881f5c] dark:text-white px-2 opacity-70">Gamer</p>
+        <p className="text-xsm text-[#881f5c] dark:text-white px-2 opacity-70">Astrônomo</p>
       </button>
       <button className="transition duration-custom border-2 bg-gray-bg rounded-md border-gray-border hover:bg-gray-hover">
-        <p className="text-xsm text-[#14181b] dark:text-white px-2 opacity-70">Gamer</p>
+        <p className="text-xsm text-[#14181b] dark:text-white px-2 opacity-70">Mestre do Xadrez</p>
       </button>
     </div>
   )

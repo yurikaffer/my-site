@@ -111,11 +111,10 @@ const config: Config = {
               border: "#AE4172",
             },
             gray: {
-              bg: "#0F172A",
-              hover: "#474E5E",
-              border: "#1c2636",
+              bg: "#25272E",
+              hover: "#35383F",
+              border: "#474A54",
             },
-
           }
         },
       },

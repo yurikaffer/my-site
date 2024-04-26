@@ -41,7 +41,7 @@ body {
 
 .custom-scroll::-webkit-scrollbar {
   width: 7px;
-  height: 7px;
+  height: 0;
 }
 
 .custom-scroll::-webkit-scrollbar-track {
@@ -99,21 +99,25 @@ body {
 }
 
 .cardPurple {
-  background: linear-gradient( #8c8afc, #282781);
+  background: linear-gradient( #840bb4, #340746);
 }
 
 .cardRed {
-  background: linear-gradient( #ff4242, #6d0315);
+  background: linear-gradient( #e01212, #550202);
 }
 
 .cardBlue {
-  background: linear-gradient( #51DAF1, #135763);
+  background: linear-gradient( #00b2d1, #00333b);
 }
 
 .cardPink {
-  background: linear-gradient( #fa6fc2, #5e2647);
+  background: linear-gradient( #d4007f, #580034);
 }
 
 .cardGreen {
-  background: linear-gradient( #00ffd5, #14574c);
+  background: linear-gradient( #00dfba, #00493d);
+}
+
+.cardDark {
+  background: linear-gradient( #0c2783, #012352);
 }
