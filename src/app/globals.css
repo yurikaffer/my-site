@@ -56,6 +56,28 @@ body {
   /* Borda arredondada para o thumb */
 }
 
+.custom-scroll2 {
+  scrollbar-color: transparent;
+  border-radius: 15px;
+}
+
+.custom-scroll2::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.custom-scroll2::-webkit-scrollbar-track {
+  background: transparent;
+  /* Cor de fundo da trilha do scrollbar */
+}
+
+.custom-scroll2::-webkit-scrollbar-thumb {
+  background-color: #334155;
+  /* Cor do thumb do scrollbar */
+  border-radius: 15px;
+  /* Borda arredondada para o thumb */
+}
+
 @keyframes float {
   0%,
   100% {

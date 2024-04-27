@@ -21,17 +21,17 @@ import BgLayoutRoot from "@/components/BgLayoutRoot/BgLayoutRoot";
 
 export default function Home() {
   return (
-    <main>
+    <main >
       <BgLayoutRoot>
         <div className="z-10">
           <NavbarComponent />
           <section className="xl:h-screen ">
             <div className="flex justify-center">
-              <div className="flex flex-col pt-[4rem] w-[100vw] xl:flex-row xl:justify-between xl:max-w-[80rem] xl:px-0 xl:pt-[8rem]">
+              <div className="flex flex-col pt-[8rem] w-[100vw] xl:flex-row xl:justify-between xl:max-w-[80rem] xl:px-0 xl:pt-[13rem]">
                 <Apresentação />
-                <div >
+                <div className="pt-[5rem]">
                   <Tags />
-                  <div className="pt-1 px-[1rem]">
+                  <div className="pt-[8px] px-[1rem]">
                     <CodeCard />
                   </div>
                   <ButtonsExemple />
@@ -43,13 +43,13 @@ export default function Home() {
 
           <section id="about" className="relative dark:bg-[#04060c]">
             <div className="flex justify-center pt-[2rem] w-full">
-              <div className=" flex flex-col gap-20 px-[1rem] max-w-[80rem] justify-center items-center xl:flex-row xl:px-0">
+              <div className="relative flex flex-col gap-20 px-[1rem] max-w-[80rem] justify-center items-center xl:flex-row xl:px-0 z-[10]">
                 <Photos />
                 <Informations />
               </div>
             </div>
-            <div className="absolute -top-10 -left-20 h-[25rem] md:h-[35rem] md:-left-10 xl:-top-40 xl:left-[10rem]">
-              <img src="blue-purple-1.svg" className="relative rounded-large h-full z-0"></img>
+            <div className="absolute -top-10 -left-20 h-[25rem] md:h-[35rem] md:-left-10 xl:-top-40 xl:left-[10rem] z-0">
+              <img src="blue-purple-1.svg" className="relative rounded-large h-full "></img>
             </div>
           </section>
 
@@ -112,7 +112,7 @@ function Apresentação() {
 
 function CardTwitter() {
   return (
-    <div className="absolute hidden xl:flex xl:top-[67%] xl:right-[42%]  z-50 floating shadow-custom rounded-[7px]">
+    <div className="absolute hidden xl:flex xl:top-[64%] xl:right-[42%]  z-50 floating shadow-custom rounded-[7px]">
       <Card className="border-2 border-border rounded-[7px] max-w-[24rem] bg-bg bg-opacity-80 backdrop-blur">
         <CardHeader className="flex justify-between">
           <UserCard />
@@ -256,7 +256,7 @@ export default Welcome`
 
 const Tags = () => {
   return (
-    <div className="relative flex px-[1rem] overflow-x-auto gap-2 justify-start py-4 whitespace-nowrap xl:pt-[4rem] xl:py-0 xl:justify-end">
+    <div className="relative flex px-[1rem] overflow-x-auto gap-2 justify-start py-4 whitespace-nowrap xl:py-0 xl:justify-end">
       <button className="transition duration-custom border-2 bg-blue-bg rounded-md border-blue-border hover:bg-blue-hover">
         <p className="text-xsm text-[#1c3e5f] dark:text-white px-2 opacity-70">Dev</p>
       </button>

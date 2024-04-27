@@ -52,9 +52,9 @@ export default function Resume() {
     return (
         <main>
             <NavbarComponent />
-            <section className="flex md:pt-[4rem] w-full justify-center px-2 md:px-5 ">
+            <section className="flex md:pt-[10rem] w-full justify-center px-2 md:px-5 ">
                 <div className="flex w-full max-w-[80rem] gap-10 justify-between">
-                    <ScrollShadow ref={scrollRef} size={40} className="pr-2 w-full max-h-[77vh] lg:max-h-[75vh] scrollbar-thin dark:scrollbar-thumb-gray-800 scrollbar-thumb-gray-300 scrollbar-track-transparent">
+                    <ScrollShadow ref={scrollRef} size={40} className="pr-2 w-full max-h-[77vh] lg:max-h-[75vh] overflow-y-hidden hover:overflow-y-auto scrollbar-thin dark:scrollbar-thumb-gray-800 scrollbar-thumb-gray-300 scrollbar-track-transparent">
                         <Accordion selectionMode="multiple"
                             selectedKeys={expandedKeys}
                         >

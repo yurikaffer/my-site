@@ -1,45 +1,41 @@
-import { memo, useCallback, useState } from "react";
+import { memo, useEffect, useState } from "react";
+
+interface PhotosProps {
+    url: string,
+    rotate: string
+}
+
+const initialPhotos: PhotosProps[] = [
+    { url: 'aventureiro.jpeg', rotate: '3' },
+    { url: 'praiano.jpeg', rotate: '-4' },
+    { url: 'amigos.jpeg', rotate: '2' },
+    { url: 'familia.jpeg', rotate: '-3' },
+    { url: 'mary.jpeg', rotate: '5' },
+    { url: 'escola.jpeg', rotate: '-4' },
+];
 
 export default function Photos() {
-    const [activeIndex, setActiveIndex] = useState<number | null>(null);
-    const [hidden, setHidden] = useState<boolean[]>([false, false, false, false]);
-    const [entranceAnimation, setEntranceAnimation] = useState<boolean[]>([false, false, false, false]);
-    const [clickable, setClickable] = useState<boolean>(true);
+    const [photos, setPhotos] = useState(initialPhotos);
 
-    const imageUrls = ['escola.jpeg', 'mary.jpeg', 'familia.jpeg', 'amigos.jpeg', 'praiano.jpeg', 'aventureiro.jpeg'];
+    const handleRemovePhoto = (index: number) => {
+        setPhotos(photos => photos.filter((_, i) => i !== index));
+    };
 
-    const handlePhotoClick = useCallback((index: number) => {
-        if (!clickable) return;
-        setClickable(false);
-
-        setActiveIndex(index);
-        setTimeout(() => {
-            const newHidden = [...hidden];
-            newHidden[index] = true;
-            setHidden(newHidden);
-            setActiveIndex(null);
-
-            if (newHidden.every(h => h)) {
-                setHidden([false, false, false, false, false, false]);
-                setEntranceAnimation(new Array(6).fill(true));
-                setTimeout(() => setEntranceAnimation(new Array(6).fill(false)), 600);
-            }
-
-            setClickable(true);
-        }, 600);
-    }, [clickable, hidden]);
-
+    useEffect(() => {
+        if (photos.length === 0) {
+            setPhotos([...initialPhotos]);
+        }
+    }, [photos]);
+        
     return (
         <div className="relative flex w-full h-[20rem] py-[10rem] justify-center items-center ">
-            {hidden.map((isHidden, index) => (
+            {photos.map((photo, index) => (
                 <Photo
-                    key={index}
+                    key={photo.url}
                     index={index}
-                    isHidden={isHidden}
-                    entranceActive={entranceAnimation[index]}
-                    active={index === activeIndex}
-                    handleClick={handlePhotoClick}
-                    imageUrl={imageUrls[index]}
+                    imageUrl={photo.url}
+                    rotate={photo.rotate}
+                    handleRemove={handleRemovePhoto}
                 />
             ))}
         </div>
@@ -47,37 +43,31 @@ export default function Photos() {
 }
 
 interface PhotoProps {
-    index: number;
-    isHidden: boolean;
-    entranceActive: boolean;
-    active: boolean;
-    handleClick: (index: number) => void;
     imageUrl: string;
+    rotate: string;
+    index: number;
+    handleRemove: (index: number) => void;
 }
 
-const Photo = memo<PhotoProps>(({ index, isHidden, entranceActive, active, handleClick, imageUrl }) => {
-    const [isHovering, setIsHovering] = useState(false);
+const Photo = memo<PhotoProps>(({ imageUrl, rotate, index, handleRemove }) => {
+    const [startAnimate, setStartAnimate] = useState(false)
 
-    const allowedRotations = [2, 3, 6, 12];
-    const rotationIndex = index % allowedRotations.length;
-    const rotationDegree = allowedRotations[rotationIndex];
-    const rotationDirection = index % 2 === 0 ? '-' : '';
-
-    const handleMouseEnter = () => setIsHovering(true);
-    const handleMouseLeave = () => setIsHovering(false);
+    const handleClick = () => {
+        setStartAnimate(true);
+        setTimeout(() => {
+            handleRemove(index);
+        }, 300);
+    };
 
     return (
-        <div onClick={() => handleClick(index)}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className={`${active ? 'animate-slide' : ''} ${isHidden ? 'hidden' : ''} 
-                       ${entranceActive ? 'animate-entrance' : ''} absolute mx-[2rem]
+        <div onClick={() => handleClick()}
+            className={`${startAnimate ? 'animate-slide' : 'animate-entrance'} absolute mx-[2rem]
                        transition duration-300 ease-in-out border-2 cursor-pointer border-[#8999b3] dark:border-[#1c2636]
-                       bg-[#0F172A] rounded-[15px] shadow-large  z-${40 - index * 10}`}
+                       bg-[#0F172A] rounded-[15px] shadow-large`}
             style={{
-                transform: `rotate(${isHovering ? '0' : `${rotationDirection}${rotationDegree}`}deg)`
+                transform: `rotate(${rotate}deg)`
             }}>
-            <img src={imageUrl} alt={`Foto ${index}`} className="object-cover w-[100vw] sm:w-[30rem]  max-h-[14rem] sm:max-h-[25rem] xl:max-h-[25rem] rounded-[15px]" />
+            <img src={imageUrl} alt={`Foto `} className="object-cover w-[100vw] sm:w-[30rem]  max-h-[14rem] sm:max-h-[25rem] xl:max-h-[25rem] rounded-[15px]" />
         </div>
     );
 });
