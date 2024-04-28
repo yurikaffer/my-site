@@ -55,7 +55,6 @@ const config: Config = {
             'border': '#dbdee2',
             'bg': '#ffffff',
             'active-tag': '#000',
-
             blue: {
               bg: "#CFFAFE",
               hover: "#ACF3FB",
@@ -81,8 +80,7 @@ const config: Config = {
               hover: "#E5EAF1",
               border: "#C1C8D2",
             },
-
-          }
+          },
         },
         dark: {
           colors: {

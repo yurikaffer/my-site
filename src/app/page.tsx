@@ -21,19 +21,17 @@ import BgLayoutRoot from "@/components/BgLayoutRoot/BgLayoutRoot";
 
 export default function Home() {
   return (
-    <main >
+    <main>
       <BgLayoutRoot>
         <div className="z-10">
           <NavbarComponent />
-          <section className="xl:h-screen ">
+          <section className="xl:h-screen">
             <div className="flex justify-center">
-              <div className="flex flex-col pt-[8rem] w-[100vw] xl:flex-row xl:justify-between xl:max-w-[80rem] xl:px-0 xl:pt-[13rem]">
+              <div className="flex flex-col w-[100vw] xl:flex-row xl:justify-between xl:max-w-[80rem] xl:h-screen xl:items-center ">
                 <Apresentação />
-                <div className="pt-[5rem]">
+                <div className="xl:pt-[14rem]">
                   <Tags />
-                  <div className="pt-[8px] px-[1rem]">
-                    <CodeCard />
-                  </div>
+                  <CodeCard />
                   <ButtonsExemple />
                 </div>
               </div>
@@ -41,9 +39,9 @@ export default function Home() {
             <CardTwitter />
           </section>
 
-          <section id="about" className="relative dark:bg-[#04060c]">
+          <section id="about" className="relative ">
             <div className="flex justify-center pt-[2rem] w-full">
-              <div className="relative flex flex-col gap-20 px-[1rem] max-w-[80rem] justify-center items-center xl:flex-row xl:px-0 z-[10]">
+              <div className="relative flex flex-col justify-center items-center gap-20 max-w-[80rem] px-[1rem] pt-[5rem] xl:flex-row xl:px-0 z-[10]">
                 <Photos />
                 <Informations />
               </div>
@@ -53,11 +51,11 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="projects" className="relative dark:bg-[#04060c]">
+          <section id="projects" className="relative">
             <Carousel />
           </section>
 
-          <div className="relative pt-[5rem]">
+          <div className="relative pt-[5rem] ">
             <Footer />
           </div>
 
@@ -69,7 +67,7 @@ export default function Home() {
 
 function Apresentação() {
   return (
-    <div className="flex flex-col px-[1rem]">
+    <div className="flex flex-col h-screen justify-center pt-[72px] px-[1rem] 2xl:px-0 xl:justify-normal xl:pt-0 xl:h-auto">
       <p className="text-[16px] text-blue font-semibold">Bem-vindo ao meu site.</p>
       <div className="flex">
         <h1 className="text-[38px] font-extrabold leading-none tracking-tight md:text-xl">
@@ -112,7 +110,7 @@ function Apresentação() {
 
 function CardTwitter() {
   return (
-    <div className="absolute hidden xl:flex xl:top-[64%] xl:right-[42%]  z-50 floating shadow-custom rounded-[7px]">
+    <div className="absolute hidden z-50 floating shadow-custom rounded-[7px]  xl:flex   xl:right-[38%]  xl:top-[69%]     2xl:top-[69%] 2xl:right-[42%] ">
       <Card className="border-2 border-border rounded-[7px] max-w-[24rem] bg-bg bg-opacity-80 backdrop-blur">
         <CardHeader className="flex justify-between">
           <UserCard />
@@ -174,9 +172,9 @@ function UserCard() {
 
 function ButtonsExemple() {
   return (
-    <div className="w-full dark:bg-[#04060c] pl-[1rem] xl:dark:bg-transparent">
+    <div className="w-full px-[1rem] xl:px-0 xl:dark:bg-transparent">
       <div className="flex gap-2 items-center pt-4 justify-start xl:pl-[4rem] ">
-        <Button className="rounded-full h-8 dark:bg-[#0F172A] border-border z-10" variant="faded">
+        <Button className="rounded-full h-8 bg-bg border-border z-10" variant="faded">
           <FcLike className="w-full h-4" />
           <p className="text-xsm">Like</p>
         </Button>
@@ -191,26 +189,28 @@ function ButtonsExemple() {
 
 function CodeCard() {
   return (
-    <div className="border-2 border-border bg-[#0F172A] rounded-[7px] shadow-large w-full max-w-[32rem] xl:min-w-[32rem]">
-      <div className="px-2 py-1">
-        <div className="flex flex-col">
-          <div className="flex justify-between items-center p-1">
-            <div className="flex gap-1 items-center">
-              <div className="bg-[#334155] w-3 h-3 rounded-full transition duration-custom hover:bg-red-500 hover:cursor-pointer " />
-              <div className="bg-[#334155] w-3 h-3 rounded-full transition duration-custom hover:bg-yellow-500 hover:cursor-pointer " />
-              <div className="bg-[#334155] w-3 h-3 rounded-full transition duration-custom hover:bg-green-500 hover:cursor-pointer " />
+    <div className="relative pt-[2px] w-full px-[1rem] xl:px-0 xl:pr-[1rem] 2xl:pr-0 xl:max-w-[32rem]">
+      <div className="border-2 border-border bg-[#0F172A] rounded-[7px] shadow-large">
+        <div className="px-2 py-1">
+          <div className="flex flex-col">
+            <div className="flex justify-between items-center p-1">
+              <div className="flex gap-1 items-center">
+                <div className="bg-[#334155] w-3 h-3 rounded-full transition duration-custom hover:bg-red-500 hover:cursor-pointer " />
+                <div className="bg-[#334155] w-3 h-3 rounded-full transition duration-custom hover:bg-yellow-500 hover:cursor-pointer " />
+                <div className="bg-[#334155] w-3 h-3 rounded-full transition duration-custom hover:bg-green-500 hover:cursor-pointer " />
+              </div>
+              <div>
+                <p className="text-xsm text-[#526175] font-medium">/index.tsx</p>
+              </div>
+              <FaRegCopy className="cursor-pointer text-[#334155] transition duration-custom hover:text-[#78889e]" />
             </div>
             <div>
-              <p className="text-xsm text-[#526175] font-medium">/index.tsx</p>
+              <Divider orientation="horizontal" className="mt-1 bg-[#202835] " />
             </div>
-            <FaRegCopy className="cursor-pointer text-[#334155] transition duration-custom hover:text-[#78889e]" />
           </div>
           <div>
-            <Divider orientation="horizontal" className="mt-1 bg-[#202835] " />
+            <CodeBlock />
           </div>
-        </div>
-        <div>
-          <CodeBlock />
         </div>
       </div>
     </div>
@@ -222,11 +222,17 @@ const CodeBlock = () => {
     Prism.highlightAll();
   }, []);
 
-  return (
-    <pre className="custom-pre custom-scroll">
-      <code className="custom-code language-javascript">
-        {
-          `import { FC } from "react";
+  const htmlCode = 
+  `
+    <>
+      <h1>Bem vindo ao meu site!</h1>
+      <p>
+          Aqui você pode <em>{uses}</em>
+      </p>
+    </>`
+
+const jsCode = 
+  `import { FC } from "react";
 
 type WelcomeProps = {
     uses:
@@ -234,29 +240,31 @@ type WelcomeProps = {
     | "explorar meus projetos"
     | "encontrar o dev que está procurando"
     | "entrar em contato comigo <3";
-};
+  };
 
 const Welcome: React.FC<WelcomeProps> = ({ uses }) => {
-    return (
-        <>
-            <h1>Bem vindo ao meu site!</h1>
-            <p>
-                Aqui você pode <em>{uses}</em>
-            </p>
-        </>
-    )
+  return (`
+
+        
+const endCode = 
+`
+  )
 }
 
 export default Welcome`
-        }
-      </code>
+
+  return (
+    <pre className="custom-pre custom-scroll text-[11px] xl:text-[14px]">
+      <code className="custom-code language-javascript">{jsCode}</code>
+      <code className="custom-code language-html">{htmlCode}</code>
+      <code className="custom-code language-javascript">{endCode}</code>
     </pre>
   );
 };
 
 const Tags = () => {
   return (
-    <div className="relative flex px-[1rem] overflow-x-auto gap-2 justify-start py-4 whitespace-nowrap xl:py-0 xl:justify-end">
+    <div className="relative flex justify-start gap-2 whitespace-nowrap overflow-x-auto pb-[10px] pl-[1rem] xl:pr-[1rem] 2xl:pl-0 xl:py-1 xl:justify-end">
       <button className="transition duration-custom border-2 bg-blue-bg rounded-md border-blue-border hover:bg-blue-hover">
         <p className="text-xsm text-[#1c3e5f] dark:text-white px-2 opacity-70">Dev</p>
       </button>

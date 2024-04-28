@@ -30,8 +30,15 @@ body {
   background-color: transparent !important;
   border-radius: 0;
   padding: 0;
-  overflow-y: auto;
   max-height: 20rem;
+  overflow-x: hidden !important;
+  font-size: 12px !important;
+}
+
+@media (min-width: 1280px) {
+  .custom-pre {
+    font-size: 16px !important;
+  }
 }
 
 .custom-scroll {
@@ -41,7 +48,7 @@ body {
 
 .custom-scroll::-webkit-scrollbar {
   width: 7px;
-  height: 0;
+  height: 7px;
 }
 
 .custom-scroll::-webkit-scrollbar-track {
@@ -50,28 +57,6 @@ body {
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
-  background-color: #334155;
-  /* Cor do thumb do scrollbar */
-  border-radius: 15px;
-  /* Borda arredondada para o thumb */
-}
-
-.custom-scroll2 {
-  scrollbar-color: transparent;
-  border-radius: 15px;
-}
-
-.custom-scroll2::-webkit-scrollbar {
-  width: 7px;
-  height: 7px;
-}
-
-.custom-scroll2::-webkit-scrollbar-track {
-  background: transparent;
-  /* Cor de fundo da trilha do scrollbar */
-}
-
-.custom-scroll2::-webkit-scrollbar-thumb {
   background-color: #334155;
   /* Cor do thumb do scrollbar */
   border-radius: 15px;

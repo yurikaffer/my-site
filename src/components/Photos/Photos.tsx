@@ -63,11 +63,11 @@ const Photo = memo<PhotoProps>(({ imageUrl, rotate, index, handleRemove }) => {
         <div onClick={() => handleClick()}
             className={`${startAnimate ? 'animate-slide' : 'animate-entrance'} absolute mx-[2rem]
                        transition duration-300 ease-in-out border-2 cursor-pointer border-[#8999b3] dark:border-[#1c2636]
-                       bg-[#0F172A] rounded-[15px] shadow-large`}
+                    rounded-[15px] shadow-medium`}
             style={{
                 transform: `rotate(${rotate}deg)`
             }}>
-            <img src={imageUrl} alt={`Foto `} className="object-cover w-[100vw] sm:w-[30rem]  max-h-[14rem] sm:max-h-[25rem] xl:max-h-[25rem] rounded-[15px]" />
+            <img src={imageUrl} alt={`Foto `} className="object-cover rounded-[15px] w-[100vw] max-h-[20rem] sm:w-[30rem] sm:max-h-[25rem] xl:max-h-[25rem] " />
         </div>
     );
 });
