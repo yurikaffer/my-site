@@ -52,7 +52,7 @@ export default function Resume() {
     return (
         <main>
             <NavbarComponent />
-            <section className="flex md:pt-[10rem] w-full justify-center px-2 md:px-5 ">
+            <section className="flex pt-[6rem] md:pt-[10rem] w-full px-2 md:px-5 ">
                 <div className="flex w-full max-w-[80rem] gap-10 justify-between">
                     <ScrollShadow ref={scrollRef} size={40} className="pr-2 w-full max-h-[77vh] lg:max-h-[75vh] overflow-y-hidden hover:overflow-y-auto scrollbar-thin dark:scrollbar-thumb-gray-800 scrollbar-thumb-gray-300 scrollbar-track-transparent">
                         <Accordion selectionMode="multiple"
@@ -169,7 +169,7 @@ export default function Resume() {
                     </ScrollShadow>
                     <div className="hidden md:flex flex-col max-w-[170px] justify-between">
                         <div className="" >
-                            <img src="aventureiro.jpeg" alt="foto-cv" className=" object-cover h-[190px] rounded-md border-2 border-border" />
+                            <img src="aventureiro.jpeg" alt="foto-cv" className="object-cover h-[190px] rounded-[10px] border-1 border-border" />
                         </div>
                         <div className="flex flex-col gap-2 items-center">
                             <CustomLink iKey="1" href="#Intro">Introdução</CustomLink>
@@ -187,6 +187,9 @@ export default function Resume() {
                             <span className="text-text text-[14px] text-center">Joinville, Santa Catarina</span>
                             <span className="text-text text-[13px] text-center pt-1">© 2024 Yuri Kaffer. Todos os direitos reservados.</span>
                         </div>
+                    </div>
+                    <div className="hidden xl:flex absolute h-[50rem] -top-[10rem] left-[60rem] opacity-30 dark:opacity-30  z-[-10] ">
+                        <img src="blue-purple-1.svg" ></img>
                     </div>
                 </div>
             </section>

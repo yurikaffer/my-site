@@ -1,6 +1,6 @@
 import { Tooltip } from "@nextui-org/react";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { ReactNode, useCallback, useRef, useState } from "react";
 import { BsGithub, BsInfoCircleFill } from "react-icons/bs";
 import { IoIosLink } from "react-icons/io";
 
@@ -60,11 +60,10 @@ const projects = [
 ];
 
 export default function Carousel() {
-    const [activeButton, setActiveButton] = useState('');
-
-    const handleButtonClick = (button: string) => {
+    const [activeButton, setActiveButton] = useState('Todos');
+    const handleButtonClick = useCallback((button: string) => {
         setActiveButton(button);
-    };
+    }, []);
 
     return (
         <>
@@ -76,36 +75,7 @@ export default function Carousel() {
                     </div>
 
                     <div className="flex gap-2 py-[1rem] overflow-x-auto whitespace-nowrap pl-[1rem] 2xl:pl-0">
-                        <button
-                            className={`rounded-full border-1 transition duration-custom border-border bg-[#F4F6F8] dark:bg-bg px-4 py-[2px] text-xsm font-semibold ${activeButton === '' ? 'text-active-tag' : 'text-[#696969] dark:text-text'} hover:text-active-tag dark:hover:text-active-tag`}
-                            onClick={() => handleButtonClick('')}
-                        >
-                            All Projects
-                        </button>
-                        <button
-                            className={`rounded-full border-1 transition duration-custom border-border bg-[#F4F6F8] dark:bg-bg px-4 py-[2px] text-xsm font-semibold ${activeButton === 'Next.js' ? 'text-active-tag' : 'text-[#696969] dark:text-text'} dark:hover:text-active-tag hover:text-active-tag`}
-                            onClick={() => handleButtonClick('Next.js')}
-                        >
-                            Next.js
-                        </button>
-                        <button
-                            className={`rounded-full border-1 transition duration-custom border-border bg-[#F4F6F8] dark:bg-bg px-4 py-[2px] text-xsm font-semibold ${activeButton === 'React.js' ? 'text-active-tag' : 'text-[#696969] dark:text-text'} dark:hover:text-active-tag hover:text-active-tag`}
-                            onClick={() => handleButtonClick('React.js')}
-                        >
-                            React.js
-                        </button>
-                        <button
-                            className={`rounded-full border-1 transition duration-custom border-border bg-[#F4F6F8] dark:bg-bg px-4 py-[2px] text-xsm font-semibold ${activeButton === 'Adonis.js' ? 'text-active-tag' : 'text-[#696969] dark:text-text'} dark:hover:text-active-tag hover:text-active-tag`}
-                            onClick={() => handleButtonClick('Adonis.js')}
-                        >
-                            Adonis.js
-                        </button>
-                        <button
-                            className={`rounded-full border-1 transition duration-custom border-border bg-[#F4F6F8] dark:bg-bg px-4 py-[2px] text-xsm font-semibold ${activeButton === 'Nest.js' ? 'text-active-tag' : 'text-[#696969] dark:text-text'} dark:hover:text-active-tag hover:text-active-tag`}
-                            onClick={() => handleButtonClick('Nest.js')}
-                        >
-                            Nest.js
-                        </button>
+                        <TagButtons activeButton={activeButton} onButtonClick={handleButtonClick} />
                     </div>
                 </div>
             </div>
@@ -120,55 +90,45 @@ export default function Carousel() {
     );
 }
 
-interface CardCarouselProps {
-    activeButton: string;
+function TagButtons({ activeButton, onButtonClick }: {activeButton: string, onButtonClick: (button: string) => void}) {
+    const tags = ["Todos", "Next.js", "React.js", "Adonis.js", "Nest.js"];
+    return (
+        <div className="flex gap-2 pb-2 overflow-x-auto">
+            {tags.map(tag => (
+                <button
+                    key={tag}
+                    className={`rounded-full border-1 transition duration-custom border-border bg-[#F4F6F8] dark:bg-bg px-4 py-[2px] text-xsm font-semibold ${activeButton === tag ? 'text-active-tag' : 'text-[#696969] dark:text-text'} hover:text-active-tag dark:hover:text-active-tag`}
+                    onClick={() => onButtonClick(tag)}
+                >
+                    {tag}
+                </button>
+            ))}
+        </div>
+    );
 }
 
-function CardCarousel({ activeButton }: CardCarouselProps) {
+function CardCarousel({ activeButton }: {activeButton: string}) {
     const carouselRef = useRef<HTMLDivElement>(null);
+    const filteredProjects = activeButton === "Todos"
+        ? projects
+        : projects.filter(project => project.tags.includes(activeButton));
 
-    const scrollLeft = () => {
-        if (carouselRef.current) {
-            carouselRef.current.scrollBy({ left: -410, behavior: 'smooth' });
-        }
-    }
-
-    const scrollRight = () => {
-        if (carouselRef.current) {
-            carouselRef.current.scrollBy({ left: 410, behavior: 'smooth' });
-        }
-    }
-
-    const filteredProjects = activeButton
-        ? projects.filter(project => project.tags.includes(activeButton))
-        : projects;
+    const scrollLeft = () => carouselRef.current?.scrollBy({ left: -410, behavior: 'smooth' });
+    const scrollRight = () => carouselRef.current?.scrollBy({ left: 410, behavior: 'smooth' });
 
     return (
         <div>
             <div className="custom-scroll flex overflow-x-auto gap-4 py-[1rem] lg:overflow-x-hidden" ref={carouselRef}>
                 {filteredProjects.map((project, index) => (
-                    <CardProject
-                        key={index}
-                        img={project.img}
-                        description={project.description}
-                        tags={project.tags}
-                        title={project.title}
-                        demo={project.demo}
-                        git={project.git}
-                        style={project.style}
-                    />
+                    <CardProject key={index} {...project} />
                 ))}
 
             </div>
             <div className="hidden lg:flex justify-between py-4 px-[2rem] ">
-                <button
-                    onClick={scrollLeft}
-                >
+                <button onClick={scrollLeft} >
                     <p className=" text-text transition duration-custom hover:text-blue">← anterior</p>
                 </button>
-                <button
-                    onClick={scrollRight}
-                >
+                <button onClick={scrollRight} >
                     <p className="text-text transition duration-custom hover:text-blue ">próximo →</p>
                 </button>
             </div>
@@ -193,51 +153,25 @@ function CardProject({ img, title, description, tags, git, demo, style }: CardPr
             <div className="pt-4 flex flex-col gap-2 ">
                 <h3 className="text-[24px] font-extrabold text-white opacity-95 ">{title}</h3>
                 <div className="flex gap-2">
-                    {tags.map((tag, index) => (
-                        <p key={index}><Tag name={tag} /></p>
-                    ))}
+                    {tags.map((tag, index) => ( <Tag key={index} name={tag} /> ))}
                 </div>
                 <p className="text-white opacity-90">{description}</p>
             </div>
             <div className="flex justify-between mt-auto">
                 <p className="font-bold text-[17px] leading-none mt-2 opacity-60 text-[#FFF]">2024</p>
                 <div className="flex gap-4 items-center">
-                    <Tooltip content="Mais detalhes" placement="bottom">
-                        <Link
-                            className="icon-button opacity-60 transition duration-custom text-[#FFF] hover:opacity-90"
-                            href='/'
-                            referrerPolicy="no-referrer"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            <BsInfoCircleFill className="w-6 h-6 " />
-                        </Link>
-                    </Tooltip>
+                    <ProjectLinks content="Mais detalhes" href='/'>
+                        <BsInfoCircleFill className="w-6 h-6 " />
+                    </ProjectLinks>
                     {git && (
-                        <Tooltip content="Repositório" placement="bottom">
-                            <Link
-                                className="icon-button opacity-60 transition duration-custom text-[#FFF] hover:opacity-90"
-                                href={git}
-                                referrerPolicy="no-referrer"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                <BsGithub className="w-6 h-6 " />
-                            </Link>
-                        </Tooltip>
+                        <ProjectLinks content="Repositório" href={git}>
+                            <BsGithub className="w-6 h-6 " />
+                        </ProjectLinks>
                     )}
                     {demo && (
-                        <Tooltip content="Demonstração" placement="bottom">
-                            <Link
-                                className="icon-button opacity-60 transition duration-custom text-[#FFF] hover:opacity-90"
-                                href={demo}
-                                referrerPolicy="no-referrer"
-                                target="_blank"
-                                rel="noreferrer"
-                            >
-                                <IoIosLink className="w-6 h-6 " />
-                            </Link>
-                        </Tooltip>
+                        <ProjectLinks content="Demonstração" href={demo}>
+                            <IoIosLink className="w-6 h-6 " />
+                        </ProjectLinks>
                     )}
                 </div>
             </div>
@@ -245,11 +179,23 @@ function CardProject({ img, title, description, tags, git, demo, style }: CardPr
     )
 }
 
-interface TagProps {
-    name: string
+function ProjectLinks({ content, href, children }: {content: string, href: string, children: ReactNode}) {
+    return (
+        <Tooltip content={content} placement="bottom">
+            <Link
+                className="icon-button opacity-60 transition duration-custom text-[#FFF] hover:opacity-90"
+                href={href}
+                referrerPolicy="no-referrer"
+                target="_blank"
+                rel="noreferrer"
+            >
+                {children}
+            </Link>
+        </Tooltip>
+    );
 }
 
-function Tag({ name }: TagProps) {
+function Tag({ name }: {name: string}) {
     return (
         <div className="bg-[#dad9d9] rounded transition duration-custom hover:bg-opacity-50 bg-opacity-30 border-[1.5px] border-[#000000] border-opacity-20">
             <p className="text-[13px] text-white px-2 py-[2px] font-semibold opacity-90 pointer-events-none">{name}</p>

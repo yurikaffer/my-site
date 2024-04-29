@@ -46,8 +46,8 @@ export default function Home() {
                 <Informations />
               </div>
             </div>
-            <div className="absolute -top-10 -left-20 h-[25rem] md:h-[35rem] md:-left-10 xl:-top-40 xl:left-[10rem] z-0">
-              <img src="blue-purple-1.svg" className="relative rounded-large h-full "></img>
+            <div className="absolute -top-[5rem] -left-[20rem] opacity-70">
+              <img src="docs-left.png" className="relative h-full object-cover"></img>
             </div>
           </section>
 
@@ -178,7 +178,7 @@ function ButtonsExemple() {
           <FcLike className="w-full h-4" />
           <p className="text-xsm">Like</p>
         </Button>
-        <Button isIconOnly className="rounded-[100%] z-10 min-w-0 min-h-0 w-8 h-8 border-border hover:bg-[#DD9520] dark:hover:bg-[#DD9520] hover:text-[#f0f0f3] dark:hover:text-[#27272A] bg-bg" color="warning" variant="faded">
+        <Button isIconOnly className="rounded-full z-10 min-w-0 min-h-0 w-8 h-8 border-border hover:bg-[#DD9520] dark:hover:bg-[#DD9520] hover:text-[#f0f0f3] dark:hover:text-[#27272A] bg-bg" color="warning" variant="faded">
           <TiStarFullOutline className="w-full h-4" />
         </Button>
         <ThemeSwitcherCheckBox />
