@@ -105,6 +105,25 @@ body {
   }
 }
 
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-appearance-in {
+  animation-duration: 700ms; 
+}
+
+.fadeIn {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
 .cardPurple {
   background: linear-gradient( #840bb4, #340746);
 }

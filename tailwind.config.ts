@@ -35,6 +35,15 @@ const config: Config = {
       transitionDuration: {
         'custom': '300ms'
       },
+      keyframes: {
+        float: {
+          '0%, 100%': { transform: 'translateY(-0.5rem)' },
+          '50%': { transform: 'translateY(0.5rem)' },
+        }
+      },
+      animation: {
+        float: 'float 3s ease-in-out infinite',
+      },
     },
   },
   darkMode: "class",
