@@ -53,28 +53,11 @@ body {
 
 .custom-scroll::-webkit-scrollbar-track {
   background: transparent;
-  /* Cor de fundo da trilha do scrollbar */
 }
 
 .custom-scroll::-webkit-scrollbar-thumb {
   background-color: #334155;
-  /* Cor do thumb do scrollbar */
   border-radius: 15px;
-  /* Borda arredondada para o thumb */
-}
-
-@keyframes float {
-  0%,
-  100% {
-    transform: translateY(-0.5rem);
-  }
-  50% {
-    transform: translateY(0.5rem);
-  }
-}
-
-.floating {
-  animation: float 3s ease-in-out infinite;
 }
 
 .animate-slide {
@@ -93,7 +76,7 @@ body {
 }
 
 .animate-entrance {
-  animation: slideInFromLeft 0.6s forwards;
+  animation: slideInFromLeft 1s forwards;
 }
 
 @keyframes slideInFromLeft {
@@ -105,45 +88,9 @@ body {
   }
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 
 .animate-appearance-in {
   animation-duration: 700ms; 
 }
 
-.fadeIn {
-  animation: fadeIn 0.5s ease-out forwards;
-}
 
-.cardPurple {
-  background: linear-gradient( #840bb4, #340746);
-}
-
-.cardRed {
-  background: linear-gradient( #e01212, #550202);
-}
-
-.cardBlue {
-  background: linear-gradient( #00b2d1, #00333b);
-}
-
-.cardPink {
-  background: linear-gradient( #d4007f, #580034);
-}
-
-.cardGreen {
-  background: linear-gradient( #00dfba, #00493d);
-}
-
-.cardDark {
-  background: linear-gradient( #0c2783, #012352);
-}

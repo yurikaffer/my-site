@@ -1,14 +1,5 @@
 'use client'
 import 'prismjs/themes/prism-okaidia.css';
-import './globals.css'
-import { Button, Card, CardBody, CardFooter, CardHeader, Divider, Link, User } from "@nextui-org/react";
-import ThemeSwitcherCheckBox from "@/components/ThemeSwitcher/CheckBox/ThemeSwitcherCheckBox";
-import { TiStarFullOutline } from "react-icons/ti";
-import { FcLike } from "react-icons/fc";
-import Photos from "@/components/Photos/Photos";
-import Informations from "@/components/Informations/Informations";
-import Carousel from "@/components/Carousel/CardCarousel";
-import Footer from "@/components/Layout/Footer";
 import Presentation from "@/components/Presentation/Presentation";
 import dynamic from 'next/dynamic';
 import BgLayoutRoot from '@/components/BgLayoutRoot/BgLayoutRoot';
@@ -24,11 +15,31 @@ const Tags = dynamic(() => import('@/components/MyTags/Tags'), {
 });
 
 const CodeCard = dynamic(() => import('@/components/CodeCard/CodeCard'), {
-  loading: () => <div className='min-w-[32rem] min-h-[24rem] rounded-[7px] bg-transparent'/>,
+  loading: () => <div className='min-w-[32rem] min-h-[24rem] rounded-[7px] bg-transparent' />,
   ssr: false
 });
 
 const ButtonsExemple = dynamic(() => import('@/components/ui/Buttons/ButtonsComponent'), {
+  loading: () => null,
+  ssr: false
+});
+
+const Photos = dynamic(() => import('@/components/Photos/Photos'), {
+  loading: () => null,
+  ssr: false
+});
+
+const Informations = dynamic(() => import('@/components/Informations/Informations'), {
+  loading: () => null,
+  ssr: false
+});
+
+const Carousel = dynamic(() => import('@/components/Carousel/CardCarousel'), {
+  loading: () => null,
+  ssr: false
+});
+
+const Footer = dynamic(() => import('@/components/Layout/Footer'), {
   loading: () => null,
   ssr: false
 });
@@ -51,27 +62,23 @@ export default function Home() {
             </div>
             <CardTwitter />
           </section>
-
-          {/*<section id="about" className="relative ">
-            <div className="flex justify-center pt-[2rem] w-full">
-              <div className="relative flex flex-col justify-center items-center gap-20 max-w-[80rem] px-[1rem] pt-[5rem] xl:flex-row xl:px-0 z-[10]">
+          <section id="about" className='relative'>
+            <div className="flex justify-center w-full pt-[10rem] xl:pt-[5rem]">
+              <div className="z-10 flex flex-col justify-center items-center max-w-[80rem] px-[1rem] xl:flex-row xl:px-0 xl:gap-20">
                 <Photos />
                 <Informations />
               </div>
             </div>
             <div className="absolute -top-[5rem] -left-[20rem] opacity-70">
-              <img src="docs-left.png" className="relative h-full object-cover"></img>
+              <img src="docs-left.png" alt='Sombra azul' className="relative h-full object-cover " loading='lazy'></img>
             </div>
           </section>
-
-          <section id="projects" className="relative">
+          <section id="projects" className="relative xl:pt-[12rem]">
             <Carousel />
           </section>
-
-          <div className="relative pt-[5rem] ">
+          <div className="relative pt-[10rem] ">
             <Footer />
-  </div>*/}
-
+          </div>
         </div>
       </BgLayoutRoot>
     </main>

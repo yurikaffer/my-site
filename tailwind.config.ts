@@ -44,6 +44,18 @@ const config: Config = {
       animation: {
         float: 'float 3s ease-in-out infinite',
       },
+      backgroundImage: {
+        'cardPurple': 'radial-gradient( circle farthest-corner at 10% 20%, rgba(171,102,255,1) 0%, rgba(116,182,247,1) 90% )',
+        'cardRed': 'radial-gradient( circle farthest-corner at 10% 20%, rgba(253,203,50,1) 0%, rgba(244,56,98,1) 100.2% )',
+        'cardBlue': 'radial-gradient( circle farthest-corner at -3.3% 48%, rgba(141,146,239,1) 0%, rgba(99,229,254,1) 90% )',
+        'cardPink': 'radial-gradient( circle farthest-corner at 10% 20%, rgba(222,168,248,1) 0%, rgba(168,222,248,1) 21.8%, rgba(189,250,205,1) 35.6%, rgba(243,250,189,1) 52.9%, rgba(250,227,189,1) 66.8%, rgba(248,172,172,1) 90%, rgba(254,211,252,1) 99.7% );',
+        'cardGreen': 'radial-gradient( circle farthest-corner at 10% 20%, rgba(50,172,109,1) 0%, rgba(209,251,155,1) 100.2% )',
+        'cardDark': 'radial-gradient( circle 297px at -2% -18.6%,  rgba(109,206,135,1) 0%, rgba(252,249,81,1) 62.7%, rgba(249,150,133,1) 90% );'
+
+      },
+      screens: {
+        'mb': '450px',
+      }
     },
   },
   darkMode: "class",
