@@ -1,15 +1,14 @@
 'use client'
 import React, { ReactNode } from "react";
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Tooltip, CircularProgress } from "@nextui-org/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, NavbarMenuToggle, NavbarMenu, NavbarMenuItem, Tooltip } from "@nextui-org/react";
 import ThemeSwitcherButton from "../ThemeSwitcher/ButtonSwitcher/ThemeSwitcherButton";
-import { BsGithub } from "react-icons/bs";
+import { GithubIcon } from "../Icons/Icons";
 
 export default function NavbarComponent() {
   const menuItems = [
-    "Sobre",
-    "Projetos",
-    "Resumo",
-    "Blog",
+    {name: "Sobre", href: "/#about"},
+    {name: "Projetos", href: "/#projects"},
+    {name: "Jornada", href: "/journey"},
   ];
 
   return (
@@ -19,23 +18,18 @@ export default function NavbarComponent() {
           <div>
             <NavbarBrand >
               <Link color="foreground" href="/">
-                <p className="gradient-text font-extrabold text-[18px]">{'<YK />'}</p>
+                <p className="gradient-text font-extrabold text-[18px]">{'<YK/>'}</p>
               </Link>
             </NavbarBrand>
           </div>
           <div>
             <NavbarContent className="hidden sm:flex gap-12" >
-              <NavbarItem>
-                <CustomLink href="#about">Sobre</CustomLink>
+            {menuItems.map((item, index) => (
+              <NavbarItem key={index}>
+                <CustomLink href={item.href}>{item.name}</CustomLink>
               </NavbarItem>
-              <NavbarItem>
-                <CustomLink href="#projects">Projetos</CustomLink>
-              </NavbarItem>
-              <NavbarItem>
-                <CustomLink href="/resume">Resumo</CustomLink>
-              </NavbarItem>
-              <Tooltip
-                content={inDevelopment()}>
+            ))}
+              <Tooltip content={inDevelopment()} showArrow={true} >
                 <NavbarItem className="cursor-pointer">
                   <Link isDisabled className="text-text font-semibold">
                     Blog
@@ -44,36 +38,26 @@ export default function NavbarComponent() {
               </Tooltip>
             </NavbarContent>
           </div>
-          <div className="flex gap-5 ">
-            <NavbarItem className="lg:flex text-text hover:text-blue ">
-              <ThemeSwitcherButton />
-            </NavbarItem>
-            <NavbarItem className="lg:flex">
-              <Link
-                className="icon-button text-text hover:text-blue "
-                href='https://github.com/yurikaffer'
-                referrerPolicy="no-referrer"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <BsGithub className="w-5 h-5" />
-              </Link>
-            </NavbarItem>
-            <NavbarContent className="sm:hidden" justify="start">
+          <div className="flex gap-5 items-center">
+            <Tooltip content="Tema">
+              <NavbarContent className="text-text hover:text-blue ">
+                <ThemeSwitcherButton />
+              </NavbarContent>
+            </Tooltip>
+            <NavbarContent>
+              <GithubIcon h="5" w="5"/>
+            </NavbarContent>
+            <NavbarContent className="sm:hidden" >
               <NavbarMenuToggle />
             </NavbarContent>
           </div>
         </div>
 
-        <NavbarMenu className="pt-5 ">
+        <NavbarMenu className="pt-[5rem] items-center">
           {menuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                className="w-full text-text hover:text-blue"
-                href="#"
-                size="lg"
-              >
-                {item}
+              <Link className="w-full font-semibold text-text text-[28px] hover:text-blue" href={item.href}>
+                {item.name}
               </Link>
             </NavbarMenuItem>
           ))}

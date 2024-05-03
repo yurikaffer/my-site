@@ -1,4 +1,4 @@
-import { Tooltip } from "@nextui-org/react";
+import { Button, Tooltip } from "@nextui-org/react";
 import Link from "next/link";
 import { ReactNode, useCallback, useRef, useState } from "react";
 import { BsGithub, BsInfoCircleFill } from "react-icons/bs";
@@ -12,7 +12,7 @@ const projects = [
         title: "Portfólio",
         demo: "teste",
         git: "teste",
-        style: "bg-cardRed",
+        style: "bg-ligth-gradient-2 dark:bg-dark-gradient-1",
         year: '2024'
     },
     {
@@ -22,7 +22,7 @@ const projects = [
         title: "Tec Embalagens",
         demo: "https://tecembalagens.com.br/",
         git: "https://github.com/yurikaffer/site-tec",
-        style: "bg-cardBlue",
+        style: "bg-ligth-gradient-3 dark:bg-dark-gradient-2",
         year: '2024'
     },
     {
@@ -32,7 +32,7 @@ const projects = [
         title: "Price of Life",
         demo: "https://price-of-life.vercel.app/",
         git: "https://github.com/yurikaffer/price-of-life",
-        style: "bg-cardGreen",
+        style: "bg-ligth-gradient-5 dark:bg-dark-gradient-3",
         year: '2024'
     },
     {
@@ -42,7 +42,7 @@ const projects = [
         title: "Rede Social",
         demo: "https://rede-social-frontend.vercel.app/",
         git: "https://github.com/yurikaffer/rede-social-frontend",
-        style: "bg-cardPink",
+        style: "bg-ligth-gradient-4 dark:bg-dark-gradient-4",
         year: '2024'
     },
     {
@@ -51,7 +51,7 @@ const projects = [
         tags: ['Adonis.js', 'Node.js', 'React.js', 'TS'],
         title: "Game Hub",
         git: "https://github.com/yurikaffer/game-hub-frontend",
-        style: "bg-cardPurple ",
+        style: "bg-ligth-gradient-1 dark:bg-dark-gradient-5",
         year: '2024'
     },
     {
@@ -60,7 +60,7 @@ const projects = [
         tags: ['Adonis.js', 'Node.js', 'React.js', 'TS'],
         title: "Desafio toDo List",
         git: "https://github.com/yurikaffer/frontend-challenge-to-do-list",
-        style: "bg-cardDark",
+        style: "bg-ligth-gradient-6 dark:bg-dark-gradient-6",
         year: '2023'
     }
 ];
@@ -154,18 +154,18 @@ interface CardProjectProps {
 
 function CardProject({ img, title, description, tags, git, demo, style, year }: CardProjectProps) {
     return (
-        <div className={`${style} animate-entrance rounded-large border-solid border-2 border-black border-opacity-30 flex flex-col w-full min-w-[21rem] max-w-[21rem] h-[29rem] lg:max-w-[25rem] lg:min-w-[25rem] p-[1rem] transition duration-custom lg:hover:-translate-y-3 `}>
+        <div className={`${style} animate-entrance flex flex-col w-full min-w-[21rem] max-w-[21rem] h-[29rem] p-[1rem] rounded-large border-solid border-2 border-black border-opacity-30 transition duration-custom lg:max-w-[25rem] lg:min-w-[25rem] lg:hover:-translate-y-3`}>
             <img src={img} alt={'imagem' + title} className="object-cover border-2 border-black border-opacity-30 h-full max-h-[13rem] w-full rounded-large [mask-image:linear-gradient(180deg,#fff_56.35%,rgb(255_255_255_/_0%)_96.00%)]" />
             <div className="pt-4 flex flex-col gap-2 ">
-                <h3 className="text-[24px] font-extrabold text-black opacity-75 dark:text-white ">{title}</h3>
+                <h3 className="text-[24px] font-extrabold text-black opacity-75 dark:text-white dark:opacity-90 ">{title}</h3>
                 <div className="flex gap-2">
                     {tags.map((tag, index) => ( <Tag key={index} name={tag} /> ))}
                 </div>
-                <p className="text-black opacity-75 dark:text-white font-medium">{description}</p>
+                <p className="text-black opacity-75 dark:text-white dark:opacity-90 font-medium">{description}</p>
             </div>
             <div className="flex justify-between mt-auto">
-                <p className="font-bold text-[17px] leading-none mt-2 opacity-70 text-black">{year}</p>
-                <div className="flex gap-4 items-center">
+                <p className="font-bold text-[17px] leading-none mt-2 opacity-70 text-black dark:text-white dark:opacity-90">{year}</p>
+                <div className="flex items-center">
                     {/*<ProjectLinks content="Mais detalhes" href='/'>
                         <BsInfoCircleFill className="w-6 h-6 " />
                     </ProjectLinks>*/}
@@ -184,24 +184,25 @@ function CardProject({ img, title, description, tags, git, demo, style, year }: 
 function ProjectLinks({ content, href, children }: {content: string, href: string, children: ReactNode}) {
     return (
         <Tooltip content={content} placement="bottom">
-            <Link
-                className="icon-button opacity-70 transition duration-custom text-black hover:opacity-50"
-                href={href}
-                referrerPolicy="no-referrer"
-                target="_blank"
-                rel="noreferrer"
-                aria-disabled={true}
-            >
-                {children}
-            </Link>
+                <Button isDisabled={!Boolean(href)} isIconOnly className="bg-transparent  h-6">
+                    <Link
+                        className="icon-button opacity-70 transition duration-custom text-black dark:text-white dark:opacity-90 hover:opacity-50"
+                        href={href}
+                        referrerPolicy="no-referrer"
+                        target="_blank"
+                        rel="noreferrer"
+                    >
+                        {children}
+                    </Link>
+                </Button>
         </Tooltip>
     );
 }
 
 function Tag({ name }: {name: string}) {
     return (
-        <div className="bg-[#dad9d9] rounded transition duration-custom hover:bg-opacity-50 bg-opacity-30 border-[1.5px] border-[#000000] border-opacity-20">
-            <p className="text-[13px] text-black opacity-70 dark:text-white px-2 py-[2px] font-semibold pointer-events-none">{name}</p>
+        <div className="bg-white bg-opacity-25 rounded transition duration-custom hover:bg-opacity-50 border-[1.5px] border-[#000000] border-opacity-20">
+            <p className="text-[13px] text-black opacity-70 dark:text-white dark:opacity-90 px-2 py-[2px] font-semibold pointer-events-none">{name}</p>
         </div>
     )
 }

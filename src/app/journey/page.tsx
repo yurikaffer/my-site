@@ -1,10 +1,10 @@
 'use client'
 import Footer from "@/components/Layout/Footer";
-import NavbarComponent from "@/components/Layout/Navbar";
-import { GithubIcon, LinkedinIcon, MailIcon } from "@/components/ui/Icons/Icons";
+import { GithubIcon, LinkedinIcon, MailIcon, WhatsIcon } from "@/components/Icons/Icons";
 import { Accordion, AccordionItem, Divider, ScrollShadow } from "@nextui-org/react";
 import Link from "next/link";
 import React, { ReactNode, useRef } from "react";
+import { useIsLargeScreen } from "@/Utils/Utils";
 
 export default function Resume() {
     const [expandedKeys, setExpandedKeys] = React.useState<string[]>(['1', '2', '3', '4', '5', '6']);
@@ -27,31 +27,9 @@ export default function Resume() {
         )
     }
 
-    function CustomLink({ children, href, iKey }: { children: ReactNode, href: string, iKey: string }) {
-        function handleClick(iKey: string) {
-            setExpandedKeys(prevKeys => {
-                const index = prevKeys.indexOf(iKey);
-                if (index === -1) {
-                    return [...prevKeys, iKey];
-                } else {
-                    return [...prevKeys];
-                }
-            });
-        }
-
-        return (
-            <Link
-                className='transition-colors duration-300 ease-in-out font-medium hover:text-blue text-text'
-                onClick={() => handleClick(iKey)} href={href}
-            >
-                {children}
-            </Link>
-        );
-    }
-
     return (
         <main>
-            <section className="flex pt-[4rem] md:pt-[8rem] w-full px-2 md:px-5 justify-center ">
+            <section className="flex pt-[5rem] md:pt-[8rem] w-full px-2 md:px-5 justify-center">
                 <div className="flex w-full max-w-[80rem] gap-10 justify-between">
                     <ScrollShadow ref={scrollRef} size={40} className="pr-2 w-full max-h-[77vh] lg:max-h-[75vh] xl:overflow-y-hidden xl:hover:overflow-y-auto scrollbar-thin dark:scrollbar-thumb-gray-800 scrollbar-thumb-gray-300 scrollbar-track-transparent">
                         <Accordion selectionMode="multiple"
@@ -61,10 +39,10 @@ export default function Resume() {
                                 startContent={<ItemName name="Introdução" />}>
                                 <p className="text-text">
                                     Sou um desenvolvedor de software autodidata, apaixonado por tecnologia e em busca de
-                                    um novo desafio. Me considero um desenvolvedor em transição, me 
-                                    especializando no desenvolvimento front-end e back-end utilizando Typescript, 
-                                    React.js e Node.js. Ao longo dos anos como desenvolvedor, tive a oportunidade de 
-                                    trabalhar no desenvolvimento de sistemas integrados e em soluções como ERP, CRM, 
+                                    um novo desafio. Me considero um desenvolvedor em transição, me
+                                    especializando no desenvolvimento front-end e back-end utilizando Typescript,
+                                    React.js e Node.js. Ao longo dos anos como desenvolvedor, tive a oportunidade de
+                                    trabalhar no desenvolvimento de sistemas integrados e em soluções como ERP, CRM,
                                     BPM, WMS, GED e Chatbots.
                                 </p>
                             </AccordionItem>
@@ -129,10 +107,11 @@ export default function Resume() {
                             <AccordionItem key="3" aria-label="Competencias" id="Competencias" onPress={() => handleKeysController('3')}
                                 startContent={<ItemName name="Competências" />}>
                                 <div className="flex flex-col gap-4">
-                                    <SkillItem title="Linguagens de programação" skills="TypeScript, JavaScript, Java, Python, HTML, CSS e Sass." />
-                                    <SkillItem title="Libs & Frameworks" skills="React.js, Next.js, Nest.js, Adonis.js, Node.js, Webpack, Tailwindcss, Material UI e nextUI." />
-                                    <SkillItem title="Provedores" skills="Vercel, AWS, Firebase e Github." />
-                                    <SkillItem title="Ferramentas" skills="VSCode, Intellij Idea, Eclipse, Git, Yarn, NPM, Figma, Postman, MS Office e Dev Tools." />
+                                    <SkillItem title="Linguagens de programação" skills="TypeScript, JavaScript, Java, DataFlex, Python, HTML, e CSS." />
+                                    <SkillItem title="Libs & Frameworks" skills="React.js, Next.js, Nest.js, Adonis.js, Node.js, Tailwindcss, Material UI e nextUI." />
+                                    <SkillItem title="Banco de dados" skills="SQL, MySQL, Oracle e MongoDB." />
+                                    <SkillItem title="Provedores" skills="Vercel, AWS, Firebase, Google Cloud, Github, GitLab e Tortoise." />
+                                    <SkillItem title="Ferramentas" skills="VSCode, Intellij Idea, Eclipse, Git, Yarn, NPM, Figma, Postman, MS Office, e Dev Tools." />
                                 </div>
                             </AccordionItem>
                             <AccordionItem key="4" aria-label="Educacao" id="Educacao" onPress={() => handleKeysController('4')}
@@ -166,30 +145,8 @@ export default function Resume() {
                             </AccordionItem>
                         </Accordion>
                     </ScrollShadow>
-                    <div className="hidden md:flex flex-col max-w-[170px] justify-between">
-                        <div className="" >
-                            <img src="aventureiro.jpeg" alt="foto-cv" className="object-cover h-[190px] rounded-[10px] border-1 border-border" />
-                        </div>
-                        <div className="flex flex-col gap-2 items-center">
-                            <CustomLink iKey="1" href="#Intro">Introdução</CustomLink>
-                            <CustomLink iKey="2" href="#Experiencia">Experiência</CustomLink>
-                            <CustomLink iKey="3" href="#Competencias">Competências</CustomLink>
-                            <CustomLink iKey="4" href="#Educacao">Educação</CustomLink>
-                            <CustomLink iKey="5" href="#Certificacoes">Certificações</CustomLink>
-                        </div>
-                        <div className="flex flex-col gap-2 ">
-                            <div className="flex gap-3 justify-center">
-                                <MailIcon h="5" w="5" />
-                                <GithubIcon h="5" w="5" />
-                                <LinkedinIcon h="5" w="5" />
-                            </div>
-                            <span className="text-text text-[14px] text-center">Joinville, Santa Catarina</span>
-                            <span className="text-text text-[13px] text-center pt-1">© 2024 Yuri Kaffer. Todos os direitos reservados.</span>
-                        </div>
-                    </div>
-                    <div className="hidden xl:flex absolute h-[50rem] -top-[10rem] left-[60rem] opacity-30 dark:opacity-30  z-[-10] ">
-                        <img src="blue-purple-1.svg" ></img>
-                    </div>
+                    <Panel setExpandedKeys={setExpandedKeys}/>
+                    <BgShadow/>
                 </div>
             </section>
             <div className="md:hidden">
@@ -199,12 +156,71 @@ export default function Resume() {
     )
 }
 
-interface SkillItemProps {
-    title: string;
-    skills: string;
+function BgShadow(){
+    return (
+        <div className="hidden xl:flex absolute h-[50rem] -top-[10rem] left-[60rem] opacity-30 dark:opacity-30  z-[-10] ">
+            <img src="blue-purple-1.svg" ></img>
+        </div>
+    )
 }
 
-function SkillItem({title, skills}: SkillItemProps) {
+interface PanelProps {
+    setExpandedKeys: React.Dispatch<React.SetStateAction<string[]>>
+}
+
+function Panel({setExpandedKeys}: PanelProps) {
+    const isLargeScreen = useIsLargeScreen(768);
+    if (!isLargeScreen) return null;
+
+    function CustomLink({ children, href, iKey }: { children: ReactNode, href: string, iKey: string }) {
+        function handleClick(iKey: string) {
+            setExpandedKeys(prevKeys => {
+                const index = prevKeys.indexOf(iKey);
+                if (index === -1) {
+                    return [...prevKeys, iKey];
+                } else {
+                    return [...prevKeys];
+                }
+            });
+        }
+
+        return (
+            <Link
+                className='transition-colors duration-300 ease-in-out font-medium hover:text-blue text-text'
+                onClick={() => handleClick(iKey)} href={href}
+            >
+                {children}
+            </Link>
+        );
+    }
+
+    return (
+        <div className="hidden md:flex flex-col max-w-[170px] justify-between">
+            <div className="" >
+                <img loading="eager" src="user.jpeg" alt="foto-cv" className="object-cover h-[190px] rounded-[10px] border-1 border-border" />
+            </div>
+            <div className="flex flex-col gap-2 items-center">
+                <CustomLink iKey="1" href="#Intro">Introdução</CustomLink>
+                <CustomLink iKey="2" href="#Experiencia">Experiência</CustomLink>
+                <CustomLink iKey="3" href="#Competencias">Competências</CustomLink>
+                <CustomLink iKey="4" href="#Educacao">Educação</CustomLink>
+                <CustomLink iKey="5" href="#Certificacoes">Certificações</CustomLink>
+            </div>
+            <div className="flex flex-col gap-2 ">
+                <div className="flex gap-3 justify-center">
+                    <WhatsIcon h="5" w="5" />
+                    <MailIcon h="5" w="5" />
+                    <LinkedinIcon h="5" w="5" />
+                    <GithubIcon h="5" w="5" />
+                </div>
+                <span className="text-text text-[14px] text-center">Joinville, Santa Catarina</span>
+                <span className="text-text text-[13px] text-center pt-1">© 2024 Yuri Kaffer. Todos os direitos reservados.</span>
+            </div>
+        </div>
+    )
+}
+
+function SkillItem({ title, skills }: { title: string, skills: string }) {
     return (
         <div>
             <strong className="text-text text-[17px]">{title}</strong>
@@ -213,12 +229,7 @@ function SkillItem({title, skills}: SkillItemProps) {
     )
 }
 
-interface CertificateItemProps {
-    institution: string;
-    name: string;
-}
-
-function CertificateItem({ institution, name }: CertificateItemProps) {
+function CertificateItem({ institution, name }: { institution: string, name: string }) {
     return (
         <div className="flex gap-1">
             <p className="font-semibold text-text text-[14px]">{institution}</p>

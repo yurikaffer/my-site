@@ -2,6 +2,7 @@ import { FaNodeJs } from "react-icons/fa"
 import { SiReact } from "react-icons/si"
 import { TbBrandNextjs } from "react-icons/tb"
 import './ButtonRGB.css'
+import { useRouter } from "next/navigation"
 
 export default function Presentation() {
     return (
@@ -55,14 +56,23 @@ function TechnologyIcons() {
 }
 
 function ButtonsComponent() {
-    const style = "relative inline-block  py-[7px] px-[30px] rounded-md transition duration-custom backdrop-blur bg-bg border-2 border-border text-text hover:text-[#111] dark:hover:text-[#cfcfcf] hover:bg-opacity-90 hover:border-transparent"
+    const router = useRouter();
+    const style = "relative inline-block py-[7px] px-[30px] rounded-md transition duration-custom backdrop-blur bg-bg border-2 border-border text-text hover:text-[#111] dark:hover:text-[#cfcfcf]  hover:border-transparent"
+
+    const handleClick = () => {
+        router.push('/journey');
+    };
+
+    const handleOpenWhats = () => {
+        window.open('https://api.whatsapp.com/send?phone=5547996171843&text=Ol%C3%A1%20Yuri!%20tudo%20bem%3F%0A%0AVim%20atrav%C3%A9s%20do%20seu%20portf%C3%B3lio.', '_blank');
+    };
 
     return (
         <div className="flex gap-5 pt-5">
-            <button className={`gradient-shadow ${style}`}>
-                Vamos Conversar
+            <button className={`gradient-shadow ${style}`} onClick={handleOpenWhats}>
+                Bora Conversar
             </button>
-            <button className={`gradient-shadow-reverse ${style}`}>
+            <button className={`gradient-shadow-reverse ${style}`} onClick={handleClick}>
                 Jornada
             </button>
         </div>

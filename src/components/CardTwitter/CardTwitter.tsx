@@ -1,9 +1,9 @@
+import { useIsLargeScreen } from "@/Utils/Utils";
 import { Button, Card, CardBody, CardFooter, CardHeader, User } from "@nextui-org/react";
 import Link from "next/link";
-import { useState, useEffect } from 'react';
 
 export default function CardTwitter() {
-    const isLargeScreen = useIsLargeScreen();
+    const isLargeScreen = useIsLargeScreen(1280);
     if (!isLargeScreen) return null;
 
     return (
@@ -54,7 +54,7 @@ function UserCard() {
             name="Yuri Kaffer"
             description={( <CustomLink content="@yuri_kaffer" style="text-text font-normal" />)}
             avatarProps={{
-                src: "https://avatars.githubusercontent.com/u/303714325?v=4",
+                src: "/user.jpeg",
                 className: "border-2 border-border"
             }}
         />
@@ -75,20 +75,3 @@ function CustomLink({style, content}: {style: string, content: string}) {
     )
 }
 
-function useIsLargeScreen() {
-    const [isLargeScreen, setIsLargeScreen] = useState(false);
-
-    useEffect(() => {
-        const checkScreenSize = () => {
-            setIsLargeScreen(window.innerWidth >= 1280);
-        };
-
-        checkScreenSize();
-        window.addEventListener('resize', checkScreenSize);
-
-        // Limpeza do listener
-        return () => window.removeEventListener('resize', checkScreenSize);
-    }, []);
-
-    return isLargeScreen;
-}

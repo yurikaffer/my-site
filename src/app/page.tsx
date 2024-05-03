@@ -19,7 +19,7 @@ const CodeCard = dynamic(() => import('@/components/CodeCard/CodeCard'), {
   ssr: false
 });
 
-const ButtonsExemple = dynamic(() => import('@/components/ui/Buttons/ButtonsComponent'), {
+const ButtonsExemple = dynamic(() => import('@/components/ButtonsExemple/ButtonsExemple'), {
   loading: () => null,
   ssr: false
 });
@@ -62,18 +62,16 @@ export default function Home() {
             </div>
             <CardTwitter />
           </section>
-          <section id="about" className='relative'>
-            <div className="flex justify-center w-full pt-[10rem] xl:pt-[5rem]">
-              <div className="z-10 flex flex-col justify-center items-center max-w-[80rem] px-[1rem] xl:flex-row xl:px-0 xl:gap-20">
-                <Photos />
-                <Informations />
-              </div>
+          <section id="about" className='relative flex justify-center w-full'>
+            <div className="relative z-10 flex flex-col justify-center items-center max-w-[80rem] my-[10rem] xl:my-[5rem] px-[1rem] xl:flex-row xl:px-0 xl:gap-20">
+              <Photos />
+              <Informations />
             </div>
             <div className="absolute -top-[5rem] -left-[20rem] opacity-70">
               <img src="docs-left.png" alt='Sombra azul' className="relative h-full object-cover " loading='lazy'></img>
             </div>
           </section>
-          <section id="projects" className="relative xl:pt-[12rem]">
+          <section id="projects" className="relative xl:pt-[6rem]">
             <Carousel />
           </section>
           <div className="relative pt-[10rem] ">

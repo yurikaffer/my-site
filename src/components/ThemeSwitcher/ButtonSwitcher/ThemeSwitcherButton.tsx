@@ -32,6 +32,7 @@ const ThemeSwitcherButton: FC = () => {
 
   return (
     <motion.button
+      aria-label="Botão Tema"
       className="icon-button relative transition-all "
       name="ThemeSwitcherButton"
       onClick={() => {

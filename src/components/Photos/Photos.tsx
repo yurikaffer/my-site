@@ -11,6 +11,7 @@ interface PhotosProps {
 const initialPhotos: PhotosProps[] = [
     { url: '/fogueira.jpeg', rotate: '-2', alt: 'foto da fogueira', tooltip: 'E no final, tudo sempre vai dar certo. <3' },
     { url: '/camping.jpeg', rotate: '6', alt: 'foto do camping', tooltip: 'Final de semana de camping com os amigos. 🏕️' },
+    { url: '/praia.jpeg', rotate: '-2', alt: 'foto andando na praia', tooltip: 'Uma visita ao sul da ilha. 🏝️' },
     { url: '/aventureiro.jpeg', rotate: '3', alt: 'foto na mata', tooltip: 'Dia de pescaria no Paraná. 🎣' },
     { url: '/praiano.jpeg', rotate: '-4', alt: 'foto na praia', tooltip: 'Essa foto está digna de férias em Cancún, mas era Guaratuba. 🏖' },
     { url: '/amigos.webp', rotate: '2', alt: 'foto dos amigos', tooltip: 'sushi night com os de verdade. 🍣🥢' },

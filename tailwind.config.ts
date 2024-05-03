@@ -45,13 +45,19 @@ const config: Config = {
         float: 'float 3s ease-in-out infinite',
       },
       backgroundImage: {
-        'cardPurple': 'radial-gradient( circle farthest-corner at 10% 20%, rgba(171,102,255,1) 0%, rgba(116,182,247,1) 90% )',
-        'cardRed': 'radial-gradient( circle farthest-corner at 10% 20%, rgba(253,203,50,1) 0%, rgba(244,56,98,1) 100.2% )',
-        'cardBlue': 'radial-gradient( circle farthest-corner at -3.3% 48%, rgba(141,146,239,1) 0%, rgba(99,229,254,1) 90% )',
-        'cardPink': 'radial-gradient( circle farthest-corner at 10% 20%, rgba(222,168,248,1) 0%, rgba(168,222,248,1) 21.8%, rgba(189,250,205,1) 35.6%, rgba(243,250,189,1) 52.9%, rgba(250,227,189,1) 66.8%, rgba(248,172,172,1) 90%, rgba(254,211,252,1) 99.7% );',
-        'cardGreen': 'radial-gradient( circle farthest-corner at 10% 20%, rgba(50,172,109,1) 0%, rgba(209,251,155,1) 100.2% )',
-        'cardDark': 'radial-gradient( circle 297px at -2% -18.6%,  rgba(109,206,135,1) 0%, rgba(252,249,81,1) 62.7%, rgba(249,150,133,1) 90% );'
+        'ligth-gradient-1': 'linear-gradient( 103.3deg, rgba(252,225,208,1) 30%, rgba(255,173,214,1) 55.7%, rgba(162,186,245,1) 81.8% );',
+        'ligth-gradient-2': 'radial-gradient( circle farthest-corner at -0.1% 1.8%, rgba(255,77,77,0.7) 0%, rgba(255,184,129,0.34) 100.2% );',
+        'ligth-gradient-3': 'linear-gradient( 0deg, rgba(191,241,236,1) 22.3%, rgba(109,192,236,1) 84.1% );',
+        'ligth-gradient-4': 'radial-gradient( circle farthest-corner at 10% 20%, rgba(222,168,248,1) 0%, rgba(168,222,248,1) 21.8%, rgba(189,250,205,1) 35.6%, rgba(243,250,189,1) 52.9%, rgba(250,227,189,1) 66.8%, rgba(248,172,172,1) 90%, rgba(254,211,252,1) 99.7% );',
+        'ligth-gradient-5': 'radial-gradient( circle farthest-corner at 10% 20%, rgba(176,229,208,1) 42%, rgba(92,202,238,0.41) 93.6% );',
+        'ligth-gradient-6': 'linear-gradient( 110.5deg, rgba(248,196,249,0.66) 22.8%, rgba(253,122,4,0.15) 64.6% );',
 
+        'dark-gradient-1': 'radial-gradient(circle farthest-corner at 14.2% 24%,  rgba(239,61,78,1) 0%, rgba(239,61,78,0.81) 51.8%, rgba(239,61,78,0.63) 84.6% );',
+        'dark-gradient-2': 'linear-gradient(to right, #0575e6, #021b79);',
+        'dark-gradient-3': 'linear-gradient(0deg,  rgba(9,154,151,1) 6.3%, rgba(21,205,168,1) 90.6% );',
+        'dark-gradient-4': 'linear-gradient( 60deg,  rgba(216,27,96,1) 33.1%, rgba(237,107,154,1) 74.9% );',
+        'dark-gradient-5': 'linear-gradient( 60deg,  rgba(0,104,155,1) 19.8%, rgba(0,173,239,1) 92.1% );',
+        'dark-gradient-6': 'radial-gradient( circle farthest-corner at 80% 20%,  rgba(0,255,176,1) 0%, rgba(66,105,242,1) 90% );'
       },
       screens: {
         'mb': '450px',
