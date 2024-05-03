@@ -6,12 +6,12 @@ import { IoIosLink } from "react-icons/io";
 
 const projects = [
     {
-        img: "site-apresentacao.png",
+        img: "portfolio.png",
         description: "Projeto front-end com o objetivo de estudar as tecnologias utilizadas e expor o meu trabalho de forma estratégica na web.",
         tags: ['Next.js', 'React.js', 'Tailwind', 'NextUI'],
         title: "Portfólio",
-        demo: "teste",
-        git: "teste",
+        demo: "https://yurikaffer.dev/",
+        git: "https://github.com/yurikaffer/my-site",
         style: "bg-ligth-gradient-2 dark:bg-dark-gradient-1",
         year: '2024'
     },

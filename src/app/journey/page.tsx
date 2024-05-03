@@ -31,7 +31,7 @@ export default function Resume() {
         <main>
             <section className="flex pt-[5rem] md:pt-[8rem] w-full px-2 md:px-5 justify-center">
                 <div className="flex w-full max-w-[80rem] gap-10 justify-between">
-                    <ScrollShadow ref={scrollRef} size={40} className="pr-2 w-full max-h-[77vh] lg:max-h-[75vh] xl:overflow-y-hidden xl:hover:overflow-y-auto scrollbar-thin dark:scrollbar-thumb-gray-800 scrollbar-thumb-gray-300 scrollbar-track-transparent">
+                    <ScrollShadow ref={scrollRef} size={40} className="pr-2 w-full max-h-[78vh] lg:max-h-[80vh] xl:overflow-y-hidden xl:hover:overflow-y-auto scrollbar-thin dark:scrollbar-thumb-gray-800 scrollbar-thumb-gray-300 scrollbar-track-transparent">
                         <Accordion selectionMode="multiple"
                             selectedKeys={expandedKeys}
                         >
