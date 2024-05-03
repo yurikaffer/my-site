@@ -25,12 +25,12 @@ function Biography() {
     return (
         <div className="flex flex-col gap-4 pt-1 text-text max-w-[45rem]">
             <h2 className="text-[16px] italic">
-                Um mero entusiasta da tecnologia. Curioso, proativo e buscando pelo próximo desafio.
+                Um mero entusiasta da tecnologia buscando pelo próximo desafio.
             </h2>
             <h3 className="text-[16px]">
-                Profissionalmente, me considero um desenvolvedor em transição, focado em direcionar minha carreira para a
+                Profissionalmente, me considero um desenvolvedor em transição, direcionando minha carreira para a
                 especialização em tecnologias como Node.js, React.js e TypeScript, aprofundando meu conhecimento nessas ferramentas
-                para ser capaz de desenvolver soluções modernas, performáticas e capazes de proporcionar uma experiência única.
+                para desenvolver soluções modernas, performáticas e capazes de proporcionar uma experiência única.
             </h3>
         </div>
     )
