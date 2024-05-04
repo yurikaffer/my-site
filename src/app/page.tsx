@@ -63,11 +63,11 @@ export default function Home() {
             <CardTwitter />
           </section>
           <section id="about" className='relative flex justify-center w-full'>
-            <div className="relative z-10 flex flex-col justify-center items-center max-w-[80rem] my-[10rem] xl:my-[5rem] px-[1rem] xl:flex-row xl:px-0 xl:gap-20">
+            <div className="relative z-20 flex flex-col justify-center items-center max-w-[80rem] my-[10rem] xl:my-[5rem] px-[1rem] xl:flex-row xl:px-0 xl:gap-20">
               <Photos />
               <Informations />
             </div>
-            <div className="absolute -top-[5rem] -left-[20rem] opacity-70">
+            <div className="absolute -top-[5rem] -left-[20rem] opacity-70 z-[-10]">
               <img src="docs-left.png" alt='Sombra azul' className="relative h-full object-cover " loading='lazy'></img>
             </div>
           </section>

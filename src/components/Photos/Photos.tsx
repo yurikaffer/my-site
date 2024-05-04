@@ -14,7 +14,7 @@ const initialPhotos: PhotosProps[] = [
     { url: '/praia.jpeg', rotate: '-2', alt: 'foto andando na praia', tooltip: 'Uma visita ao sul da ilha. 🏝️' },
     { url: '/aventureiro.jpeg', rotate: '3', alt: 'foto na mata', tooltip: 'Dia de pescaria no Paraná. 🎣' },
     { url: '/praiano.jpeg', rotate: '-4', alt: 'foto na praia', tooltip: 'Essa foto está digna de férias em Cancún, mas era Guaratuba. 🏖' },
-    { url: '/amigos.webp', rotate: '2', alt: 'foto dos amigos', tooltip: 'sushi night com os de verdade. 🍣🥢' },
+    { url: '/amigos.webp', rotate: '2', alt: 'foto dos amigos', tooltip: 'Sushi night com os de verdade. 🍣🥢' },
     { url: '/familia.webp', rotate: '-3', alt: 'foto em familia', tooltip: 'Road trip em família. 🌅' },
     { url: '/mary.jpeg', rotate: '5', alt: 'foto no computador', tooltip: 'Mestre Jedi e a jovem padawan em seu habitat natural.' },
     { url: '/escola.jpeg', rotate: '-4', alt: 'foto antiga na escola', tooltip: '' },

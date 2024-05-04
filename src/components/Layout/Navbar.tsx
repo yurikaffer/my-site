@@ -6,9 +6,9 @@ import { GithubIcon } from "../Icons/Icons";
 
 export default function NavbarComponent() {
   const menuItems = [
-    {name: "Sobre", href: "/#about"},
-    {name: "Projetos", href: "/#projects"},
-    {name: "Jornada", href: "/journey"},
+    { name: "Sobre", href: "/#about" },
+    { name: "Projetos", href: "/#projects" },
+    { name: "Jornada", href: "/journey" },
   ];
 
   return (
@@ -24,11 +24,11 @@ export default function NavbarComponent() {
           </div>
           <div>
             <NavbarContent className="hidden sm:flex gap-12" >
-            {menuItems.map((item, index) => (
-              <NavbarItem key={index}>
-                <CustomLink href={item.href}>{item.name}</CustomLink>
-              </NavbarItem>
-            ))}
+              {menuItems.map((item, index) => (
+                <NavbarItem key={index}>
+                  <CustomLink href={item.href}>{item.name}</CustomLink>
+                </NavbarItem>
+              ))}
               <Tooltip content={inDevelopment()} showArrow={true} >
                 <NavbarItem className="cursor-pointer">
                   <Link isDisabled className="text-text font-semibold">
@@ -45,7 +45,7 @@ export default function NavbarComponent() {
               </NavbarContent>
             </Tooltip>
             <NavbarContent>
-              <GithubIcon h="5" w="5"/>
+              <GithubIcon h="5" w="5" />
             </NavbarContent>
             <NavbarContent className="sm:hidden" >
               <NavbarMenuToggle />
@@ -70,7 +70,10 @@ export default function NavbarComponent() {
 
 function CustomLink({ children, href }: { children: ReactNode, href: string }) {
   return (
-    <Link className="transition-colors duration-1000 ease-in-out text-text font-semibold hover:text-blue" href={href}>
+    <Link
+      className="transition-colors duration-1000 ease-in-out text-text font-semibold hover:text-blue"
+      href={href}
+    >
       {children}
     </Link>
   );
