@@ -51,7 +51,7 @@ export default function Home() {
         <div className="z-10">
           <section className="xl:h-screen">
             <div className="flex justify-center">
-              <div className="flex flex-col w-[100vw] xl:flex-row xl:justify-between xl:max-w-[80rem] xl:h-screen xl:items-center ">
+              <div className="flex flex-col w-[100vw] xl:flex-row xl:justify-between xl:max-w-[80rem] xl:h-screen xl:items-center">
                 <Presentation />
                 <div className="xl:pt-[14rem]">
                   <Tags />
@@ -74,7 +74,7 @@ export default function Home() {
           <section id="projects" className="relative xl:pt-[6rem]">
             <Carousel />
           </section>
-          <div className="relative pt-[10rem] ">
+          <div className="relative pt-[10rem]">
             <Footer />
           </div>
         </div>
