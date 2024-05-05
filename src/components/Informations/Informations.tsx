@@ -1,6 +1,6 @@
 export default function Informations() {
     return (
-      <div className="w-full h-full sm:pt-[2rem] max-w-[35rem] pr-[1rem] xl:pt-0 xl:max-w-none">
+      <div className="flex justify-center items-center w-full h-full sm:pt-[2rem] max-w-[35rem] pr-[1rem] xl:pt-0 xl:max-w-none">
         <div className="flex flex-col gap-6 ">
           <div className="flex justify-between leading-tight sm:px-20">
             <div className="flex flex-col ">

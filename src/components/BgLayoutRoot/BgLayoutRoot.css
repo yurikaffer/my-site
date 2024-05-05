@@ -7,6 +7,17 @@
     }
 }
 
+@media (max-width: 640px) {
+    @keyframes jumbo {
+        from {
+            background-position: 0;
+        }
+        to {
+            background-position: 0;
+        }
+    }
+}
+
 .jumbo {
     --stripes: repeating-linear-gradient(
         100deg,
@@ -35,11 +46,8 @@
     background-image: var(--stripes), var(--rainbow);
     background-size: 300%, 200%;
     background-position: 50% 50%, 50% 50%;
-
     filter: blur(10px) invert(100%);
-
     mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
-
     pointer-events: none;
 }
 

@@ -1,7 +1,7 @@
 import { Button, Tooltip } from "@nextui-org/react";
 import Link from "next/link";
 import { ReactNode, useCallback, useRef, useState } from "react";
-import { BsGithub, BsInfoCircleFill } from "react-icons/bs";
+import { BsGithub } from "react-icons/bs";
 import { IoIosLink } from "react-icons/io";
 
 const projects = [
