@@ -97,7 +97,7 @@ const Photo = memo<PhotoProps>(({ imageUrl, rotate, index, handleRemove, alt, to
                 transform: `rotate(${rotate}deg)`
             }}
         >
-            <Tooltip hidden={!Boolean(tooltip)} isOpen={isOpenTooltip} content={tooltip} placement={'bottom'} offset={-20} className="bg-white text-black">
+            <Tooltip style={{ zIndex: 100 }} isOpen={isOpenTooltip} content={tooltip} placement={'bottom'} offset={-20} className="bg-white text-black">
                 <img
                     src={imageUrl}
                     alt={alt}
