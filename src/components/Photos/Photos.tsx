@@ -66,6 +66,7 @@ interface PhotoProps {
 const Photo = memo<PhotoProps>(({ imageUrl, rotate, index, handleRemove, alt, tooltip, lastIndex }) => {
     const [startAnimate, setStartAnimate] = useState(false)
     const [isOpenTooltip, setIsOpenTooltip] = useState(false)
+    const [rendered, setRendered] = useState(false);
 
     const handleClick = () => {
         setStartAnimate(true);
@@ -75,8 +76,14 @@ const Photo = memo<PhotoProps>(({ imageUrl, rotate, index, handleRemove, alt, to
     };
 
     useEffect(() => {
-        setIsOpenTooltip(lastIndex === index)
-    }, [lastIndex]);
+        if (rendered) {
+            setIsOpenTooltip(lastIndex === index);
+        }
+    }, [lastIndex, rendered]);
+
+    useEffect(() => {
+        setRendered(true);
+    }, []);
 
     return (
         <div onClick={() => handleClick()}
