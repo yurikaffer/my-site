@@ -9,7 +9,7 @@ interface PhotosProps {
 }
 
 const initialPhotos: PhotosProps[] = [
-    { url: '/fogueira.jpeg', rotate: '-2', alt: 'foto da fogueira', tooltip: 'E no final, tudo sempre vai dar certo. <3' },
+    { url: '/fogueira.jpeg', rotate: '-2', alt: 'foto da fogueira', tooltip: 'A vida sem ser compartilhada com pessoas incríveis não faria sentido. <3' },
     { url: '/camping.jpeg', rotate: '6', alt: 'foto do camping', tooltip: 'Final de semana de camping com os amigos. 🏕️' },
     { url: '/praia.jpeg', rotate: '-2', alt: 'foto andando na praia', tooltip: 'Uma visita ao sul da ilha. 🏝️' },
     { url: '/aventureiro.jpeg', rotate: '3', alt: 'foto na mata', tooltip: 'Dia de pescaria no Paraná. 🎣' },
@@ -17,7 +17,7 @@ const initialPhotos: PhotosProps[] = [
     { url: '/amigos.webp', rotate: '2', alt: 'foto dos amigos', tooltip: 'Sushi night com os de verdade. 🍣🥢' },
     { url: '/familia.webp', rotate: '-3', alt: 'foto em familia', tooltip: 'Road trip em família. 🌅' },
     { url: '/mary.jpeg', rotate: '5', alt: 'foto no computador', tooltip: 'Mestre Jedi e a jovem padawan em seu habitat natural.' },
-    { url: '/escola.jpeg', rotate: '-4', alt: 'foto antiga na escola', tooltip: '' },
+    { url: '/escola.jpeg', rotate: '-4', alt: 'foto antiga na escola', tooltip: 'Clique nas fotos e conheça um pouco da minha história. 🤗' },
 ];
 
 export default function Photos() {
@@ -65,7 +65,6 @@ interface PhotoProps {
 
 const Photo = memo<PhotoProps>(({ imageUrl, rotate, index, handleRemove, alt, tooltip, lastIndex }) => {
     const [startAnimate, setStartAnimate] = useState(false)
-    const [startTooltip, setStartTooltip] = useState(false)
 
     const handleClick = () => {
         setStartAnimate(true);

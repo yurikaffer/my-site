@@ -71,6 +71,7 @@ export default function NavbarComponent() {
 function CustomLink({ children, href }: { children: ReactNode, href: string }) {
   return (
     <Link
+      
       className="transition-colors duration-1000 ease-in-out text-text font-semibold hover:text-blue"
       href={href}
     >
