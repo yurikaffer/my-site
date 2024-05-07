@@ -58,7 +58,7 @@ export default function Photos() {
             ))}
 
             <Tooltip content='Clique nas fotos 🤗' placement={'bottom'} className='relative bg-white text-black border-2 border-border'>
-                <div style={{zIndex: 200}} className={`absolute bottom-28 right-10 w-[3rem] h-[3rem] ${startAnimate ?  'animate-bounce' : 'animate-slide'} cursor-pointer`}>
+                <div style={{zIndex: 200}} className={`absolute bottom-16 right-2 lg:bottom-28 lg:right-10 w-[3rem] h-[3rem] ${startAnimate ?  'animate-bounce' : 'animate-slide'} cursor-pointer`}>
                     <HiCursorClick className="relative w-full h-full text-[#3587F3] "/>
                 </div>
             </Tooltip>
