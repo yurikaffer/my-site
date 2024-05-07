@@ -19,7 +19,7 @@ export default function NavbarComponent() {
             <NavbarBrand >
               <Link color="foreground" href="/">
                 <p className="text-[#07B3D8] font-extrabold text-[25px]">{'<'}</p>
-                <img src="favicon-32x32.png" alt="Navbar Icon" loading="eager" sizes="32x32"></img>
+                <img src="nav-icon.png" alt="Navbar Icon" loading="eager" className="w-[32px] h-[32px]"></img>
                 <p className="text-[#3686F4] font-extrabold text-[25px]">{'/>'}</p>
               </Link>
             </NavbarBrand>

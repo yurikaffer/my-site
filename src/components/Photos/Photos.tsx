@@ -1,9 +1,6 @@
 import { Tooltip } from "@nextui-org/react";
 import { memo, useEffect, useState } from "react";
-import { GiClick } from "react-icons/gi";
 import { HiCursorClick } from "react-icons/hi";
-import { PiCursorClickFill } from "react-icons/pi";
-import { TbClick, TbHandClick } from "react-icons/tb";
 
 interface PhotosProps {
     url: string,
@@ -13,7 +10,7 @@ interface PhotosProps {
 }
 
 const initialPhotos: PhotosProps[] = [
-    { url: '/fogueira.jpeg', rotate: '-2', alt: 'foto da fogueira', tooltip: 'A vida sem ser compartilhada com pessoas incríveis não faria sentido. <3' },
+    { url: '/fogueira.jpeg', rotate: '-2', alt: 'foto da fogueira', tooltip: 'A vida sendo compartilhada com pessoas incríveis. <3' },
     { url: '/camping.jpeg', rotate: '6', alt: 'foto do camping', tooltip: 'Final de semana de camping com os amigos. 🏕️' },
     { url: '/praia.jpeg', rotate: '-2', alt: 'foto andando na praia', tooltip: 'Uma visita ao sul da ilha. 🏝️' },
     { url: '/aventureiro.jpeg', rotate: '3', alt: 'foto na mata', tooltip: 'Dia de pescaria no Paraná. 🎣' },
@@ -57,7 +54,7 @@ export default function Photos() {
                 />
             ))}
 
-            <Tooltip content='Clique nas fotos 🤗' placement={'bottom'} className='relative bg-white text-black border-2 border-border'>
+            <Tooltip content='Você pode clicar nas fotos 🤗' placement={'bottom'} className='relative bg-white text-black border-2 border-border'>
                 <div style={{zIndex: 200}} className={`absolute bottom-16 right-2 lg:bottom-28 lg:right-10 w-[3rem] h-[3rem] ${startAnimate ?  'animate-bounce' : 'animate-slide'} cursor-pointer`}>
                     <HiCursorClick className="relative w-full h-full text-[#3587F3] "/>
                 </div>
