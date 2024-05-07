@@ -1,5 +1,9 @@
 import { Tooltip } from "@nextui-org/react";
 import { memo, useEffect, useState } from "react";
+import { GiClick } from "react-icons/gi";
+import { HiCursorClick } from "react-icons/hi";
+import { PiCursorClickFill } from "react-icons/pi";
+import { TbClick, TbHandClick } from "react-icons/tb";
 
 interface PhotosProps {
     url: string,
@@ -17,20 +21,23 @@ const initialPhotos: PhotosProps[] = [
     { url: '/amigos.webp', rotate: '2', alt: 'foto dos amigos', tooltip: 'Sushi night com os de verdade. 🍣🥢' },
     { url: '/familia.webp', rotate: '-3', alt: 'foto em familia', tooltip: 'Road trip em família. 🌅' },
     { url: '/mary.jpeg', rotate: '5', alt: 'foto no computador', tooltip: 'Mestre Jedi e a jovem padawan em seu habitat natural.' },
-    { url: '/escola.jpeg', rotate: '-4', alt: 'foto antiga na escola', tooltip: 'Clique nas fotos e conheça um pouco da minha história. 🤗' },
+    { url: '/escola.jpeg', rotate: '-4', alt: 'foto antiga na escola', tooltip: '' }, //Clique nas fotos e conheça um pouco da minha história. 🤗
 ];
 
 export default function Photos() {
     const [photos, setPhotos] = useState(initialPhotos);
     const [lastIndex, setLastIndex] = useState(initialPhotos.length - 1);
+    const [startAnimate, setStartAnimate] = useState(true)
 
     const handleRemovePhoto = (index: number) => {
         setPhotos(photos => photos.filter((_, i) => i !== index));
+        setStartAnimate(false)
     };
 
     useEffect(() => {
         if (photos.length === 0) {
             setPhotos([...initialPhotos]);
+            setStartAnimate(true)
         }
         setLastIndex(photos.length - 1)
     }, [photos]);
@@ -49,6 +56,13 @@ export default function Photos() {
                     lastIndex={lastIndex}
                 />
             ))}
+
+            <Tooltip content='Clique nas fotos 🤗' placement={'bottom'} className='relative bg-white text-black border-2 border-border'>
+                <div style={{zIndex: 200}} className={`absolute bottom-28 right-10 w-[3rem] h-[3rem] ${startAnimate ?  'animate-bounce' : 'animate-slide'} cursor-pointer`}>
+                    <HiCursorClick className="relative w-full h-full text-[#3587F3] "/>
+                </div>
+            </Tooltip>
+
         </div>
     );
 }
@@ -65,8 +79,6 @@ interface PhotoProps {
 
 const Photo = memo<PhotoProps>(({ imageUrl, rotate, index, handleRemove, alt, tooltip, lastIndex }) => {
     const [startAnimate, setStartAnimate] = useState(false)
-    const [isOpenTooltip, setIsOpenTooltip] = useState(false)
-    const [rendered, setRendered] = useState(false);
 
     const handleClick = () => {
         setStartAnimate(true);
@@ -75,36 +87,22 @@ const Photo = memo<PhotoProps>(({ imageUrl, rotate, index, handleRemove, alt, to
         }, 300);
     };
 
-    useEffect(() => {
-        if (rendered) {
-            setIsOpenTooltip(lastIndex === index);
-        }
-    }, [lastIndex, rendered]);
-
-    useEffect(() => {
-        setRendered(true);
-    }, []);
-
     return (
         <div onClick={() => handleClick()}
-            className={`
-                        ${startAnimate ? 'animate-slide' : 'animate-entrance'} 
+            className={`${startAnimate ? 'animate-slide' : 'animate-entrance'} 
                         absolute transition duration-300 ease-in-out mt-auto
-                        border-2 cursor-pointer border-[#8999b3]
-                        dark:border-[#1c2636] rounded-[15px] shadow-medium
-                    `}
-            style={{
-                transform: `rotate(${rotate}deg)`
-            }}
+                        border-2 cursor-pointer border-border rounded-[15px] shadow-medium`}
+            style={{transform: `rotate(${rotate}deg)`}}
         >
-            <Tooltip style={{ zIndex: 100 }} isOpen={isOpenTooltip} content={tooltip} placement={'bottom'} offset={-20} className="bg-white text-black">
+            <Tooltip style={{ zIndex: 100 }} isOpen={(lastIndex === index) && Boolean(tooltip)} content={tooltip} placement={'bottom'} offset={-20} className="relative bg-white text-black border-2 border-border">
                 <img
                     src={imageUrl}
                     alt={alt}
-                    className="object-cover rounded-[15px] w-[100vw] sm:w-[35rem] sm:max-h-[30rem]"
-                    loading="lazy"
+                    className="relative object-cover rounded-[15px] w-[100vw] sm:w-[35rem] sm:max-h-[30rem]"
+                    loading="eager"
                 />
             </Tooltip>
+            
         </div>
     );
 });

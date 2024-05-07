@@ -18,7 +18,9 @@ export default function NavbarComponent() {
           <div>
             <NavbarBrand >
               <Link color="foreground" href="/">
-                <p className="gradient-text font-extrabold text-[18px]">{'<YK/>'}</p>
+                <p className="text-[#07B3D8] font-extrabold text-[25px]">{'<'}</p>
+                <img src="favicon-32x32.png" alt="Navbar Icon" loading="eager" sizes="32x32"></img>
+                <p className="text-[#3686F4] font-extrabold text-[25px]">{'/>'}</p>
               </Link>
             </NavbarBrand>
           </div>
