@@ -41,7 +41,7 @@ const projects = [
         tags: ['Nest.js', 'TypeORM', 'React.js', 'Node.js'],
         title: "Rede Social",
         demo: "https://rede-social-frontend.vercel.app/",
-        git: "https://github.com/yurikaffer/rede-social-frontend",
+        git: "",
         style: "bg-ligth-gradient-4 dark:bg-dark-gradient-4",
         year: '2024'
     },
