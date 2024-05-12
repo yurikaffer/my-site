@@ -40,8 +40,8 @@ const projects = [
         description: "Esse projeto teve o propósito de estudar as tecnologias utilizadas, a estrutura de um projeto Full-Stack Node e o relecionamento de dados.",
         tags: ['Nest.js', 'TypeORM', 'React.js', 'Node.js'],
         title: "Rede Social",
-        demo: "https://rede-social-frontend.vercel.app/",
-        git: "",
+        demo: "",
+        git: "https://github.com/yurikaffer/rede-social-frontend",
         style: "bg-ligth-gradient-4 dark:bg-dark-gradient-4",
         year: '2024'
     },
