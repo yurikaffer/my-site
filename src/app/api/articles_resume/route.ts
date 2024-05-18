@@ -1,17 +1,17 @@
-import { NextApiRequest, NextApiResponse } from 'next';
+import { NextResponse } from 'next/server';
 import { db } from '../../../../firebase';
 
-export async function GET(req: NextApiRequest, res: NextApiResponse) {
+export async function GET() {
     try {
         const articlesSnapshot = await db.collection('articles_resume').get();
         const articles = articlesSnapshot.docs.map(doc => doc.data());
 
         if (articles.length === 0) {
-            return new Response('Nenhum artigo encontrado', { status: 404 })
+            return new NextResponse('Nenhum artigo encontrado', { status: 404 })
         } else {
-            return new Response(JSON.stringify(articles), { status: 200, headers: {'Content-Type': 'application/json'} });
+            return new NextResponse(JSON.stringify(articles), { status: 200, headers: { 'Content-Type': 'application/json' } });
         }
     } catch (error) {
-        return new Response('Server error', { status: 500 })
+        return new NextResponse('Server error', { status: 500 })
     }
 }
