@@ -1,4 +1,4 @@
-import { useIsLargeScreen } from "@/Utils/Utils";
+import { useIsLargeScreen } from "@/utils/Utils";
 import { Button, Card, CardBody, CardFooter, CardHeader, User } from "@nextui-org/react";
 import Link from "next/link";
 

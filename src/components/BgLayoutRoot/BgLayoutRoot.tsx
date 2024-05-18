@@ -1,6 +1,6 @@
 import React, { ReactNode } from 'react';
 import './BgLayoutRoot.css'
-import { useIsLargeScreen } from '@/Utils/Utils';
+import { useIsLargeScreen } from '@/utils/Utils';
 
 interface BgLayoutRootProps {
     children: ReactNode;

@@ -1,0 +1,57 @@
+.markdown-body h1 {
+    font-size: 4em;
+    margin: 0.67em 0;
+}
+
+.markdown-body h2 {
+    font-size: 1.5em;
+    margin: 0.83em 0;
+}
+
+.markdown-body h3 {
+    font-size: 1.17em;
+    margin: 1em 0;
+}
+
+.markdown-body h4 {
+    font-size: 1em;
+    margin: 1.33em 0;
+}
+
+.markdown-body h5 {
+    font-size: 0.83em;
+    margin: 1.67em 0;
+}
+
+.markdown-body h6 {
+    font-size: 0.67em;
+    margin: 2.33em 0;
+}
+
+.markdown-body p {
+    margin: 1em 0;
+}
+
+.markdown-body ul,
+.markdown-body ol {
+    margin: 1em 0;
+    padding-left: 2em;
+}
+
+.markdown-body li {
+    margin: 0.5em 0;
+}
+
+.markdown-body img {
+    max-width: 100%;
+    height: auto;
+}
+
+.markdown-body a {
+    color: #0366d6;
+    text-decoration: none;
+}
+
+.markdown-body a:hover {
+    text-decoration: underline;
+}

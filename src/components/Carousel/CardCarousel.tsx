@@ -40,7 +40,7 @@ const projects = [
         description: "Esse projeto teve o propósito de estudar as tecnologias utilizadas, a estrutura de um projeto Full-Stack Node e o relecionamento de dados.",
         tags: ['Nest.js', 'TypeORM', 'React.js', 'Node.js'],
         title: "Rede Social",
-        demo: "https://rede-social-frontend.vercel.app/",
+        demo: "",
         git: "https://github.com/yurikaffer/rede-social-frontend",
         style: "bg-ligth-gradient-4 dark:bg-dark-gradient-4",
         year: '2024'
@@ -54,15 +54,15 @@ const projects = [
         style: "bg-ligth-gradient-1 dark:bg-dark-gradient-5",
         year: '2024'
     },
-    {
-        img: "todo-list.png",
-        description: "Um projeto Full-Stack simples com funcionalidades de CRUD. Esse desafio foi proposto por uma empresa de tecnologia em uma etapa do processo seletivo.",
-        tags: ['Adonis.js', 'Node.js', 'React.js', 'TS'],
-        title: "Desafio toDo List",
-        git: "https://github.com/yurikaffer/frontend-challenge-to-do-list",
-        style: "bg-ligth-gradient-6 dark:bg-dark-gradient-6",
-        year: '2023'
-    }
+    //{
+        //img: "todo-list.png",
+        //description: "Um projeto Full-Stack simples com funcionalidades de CRUD. Esse desafio foi proposto por uma empresa de tecnologia em uma etapa do processo seletivo.",
+        //tags: ['Adonis.js', 'Node.js', 'React.js', 'TS'],
+        //title: "Desafio toDo List",
+        //git: "https://github.com/yurikaffer/frontend-challenge-to-do-list",
+        //style: "bg-ligth-gradient-6 dark:bg-dark-gradient-6",
+        //year: '2023'
+    //}
 ];
 
 export default function Carousel() {

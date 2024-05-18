@@ -2,7 +2,7 @@
 import Footer from "@/components/Layout/Footer";
 import { Accordion, AccordionItem, Divider, ScrollShadow } from "@nextui-org/react";
 import React, { useRef } from "react";
-import { useIsLargeScreen } from "@/Utils/Utils";
+import { useIsLargeScreen } from "@/utils/Utils";
 import { certificateItems, educationItems, expItems, skillItems } from "./cv-data";
 import Panel from "@/components/Panel/Panel";
 
