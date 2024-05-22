@@ -77,15 +77,13 @@ export default function Carousel() {
                 <div className="w-full max-w-[80rem] justify-start ">
                     <div className="px-[1rem] 2xl:px-0">
                         <p className="text-blue text-[16px] font-bold">Portfolio</p>
-                        <h1 className="text-[38px] lg:text-xl font-extrabold leading-none tracking-tight">Projetos de estudo.</h1>
+                        <h1 className="text-[38px] lg:text-xl font-extrabold leading-none tracking-tight">Projetos de estudo</h1>
                     </div>
-
                     <div className="flex gap-2 py-[1rem] overflow-x-auto whitespace-nowrap pl-[1rem] 2xl:pl-0">
                         <TagButtons activeButton={activeButton} onButtonClick={handleButtonClick} />
                     </div>
                 </div>
             </div>
-
             <div className=" flex justify-center w-full pb-[5rem] ">
                 <div className="w-full max-w-[80rem] pl-[1rem] 2xl:pl-0 ">
                     <CardCarousel activeButton={activeButton} />
@@ -166,9 +164,6 @@ function CardProject({ img, title, description, tags, git, demo, style, year }: 
             <div className="flex justify-between mt-auto">
                 <p className="font-bold text-[17px] leading-none mt-2 opacity-70 text-black dark:text-white dark:opacity-90">{year}</p>
                 <div className="flex items-center">
-                    {/*<ProjectLinks content="Mais detalhes" href='/'>
-                        <BsInfoCircleFill className="w-6 h-6 " />
-                    </ProjectLinks>*/}
                     <ProjectLinks content="Repositório" href={git ? git : ''}>
                         <BsGithub className="w-6 h-6 " />
                     </ProjectLinks>
@@ -199,7 +194,7 @@ function ProjectLinks({ content, href, children }: {content: string, href: strin
     );
 }
 
-function Tag({ name }: {name: string}) {
+export function Tag({ name }: {name: string}) {
     return (
         <div className="bg-white bg-opacity-25 rounded transition duration-custom hover:bg-opacity-50 border-[1.5px] border-[#000000] border-opacity-20">
             <p className="text-[13px] text-black opacity-70 dark:text-white dark:opacity-90 px-2 py-[2px] font-semibold pointer-events-none">{name}</p>

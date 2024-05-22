@@ -31,11 +31,11 @@ export async function GET(req: NextRequest) {
                 return categoriesMatch || introMatch || titleMatch;
             });
 
-        if (articles.length === 0) {
-            return new NextResponse('Nenhum artigo encontrado!', { status: 404 })
-        } else {
+        //if (articles.length === 0) {
+        //    return new NextResponse('Nenhum artigo encontrado!', { status: 404 })
+        //} else {
             return new NextResponse(JSON.stringify(articles), { status: 200, headers: { 'Content-Type': 'application/json' } });
-        }
+        //}
 
     } catch (error) {
         return new NextResponse('Server error.', { status: 500 })

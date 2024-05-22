@@ -24,4 +24,3 @@ export async function GET(req: NextRequest) {
         return new NextResponse('Server error', { status: 500 })
     }
 }
-
