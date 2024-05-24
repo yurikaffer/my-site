@@ -74,9 +74,7 @@ export default function Home() {
           <section id="projects" className="relative xl:pt-[6rem]">
             <Carousel />
           </section>
-          <div className="relative pt-[10rem]">
-            <Footer />
-          </div>
+          <Footer />
         </div>
       </BgLayoutRoot>
     </main>

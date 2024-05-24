@@ -9,6 +9,7 @@ export default function NavbarComponent() {
     { name: "Sobre", href: "/#about" },
     { name: "Projetos", href: "/#projects" },
     { name: "Jornada", href: "/journey" },
+    { name: "Blog", href: "/blog" },
   ];
 
   return (
@@ -31,13 +32,13 @@ export default function NavbarComponent() {
                   <CustomLink href={item.href}>{item.name}</CustomLink>
                 </NavbarItem>
               ))}
-              <Tooltip content={inDevelopment()} showArrow={true} >
+              {/*<Tooltip content={inDevelopment()} showArrow={true} >
                 <NavbarItem className="cursor-pointer">
                   <Link isDisabled className="text-text font-semibold">
                     Blog
                   </Link>
                 </NavbarItem>
-              </Tooltip>
+            </Tooltip>*/}
             </NavbarContent>
           </div>
           <div className="flex gap-5 items-center">

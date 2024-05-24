@@ -32,7 +32,7 @@ export const fetchArticlesByCategory = async (category: string) => {
     }
 };
 
-export const fetchArticlesBySearch = async ( search: string) => {
+export const fetchArticlesBySearch = async (search: string) => {
     try {
         const response = await fetch(`/api/articles_resume/${search}`);
         if (!response.ok) {

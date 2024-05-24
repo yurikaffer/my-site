@@ -1,57 +1,114 @@
-.markdown-body h1 {
-    font-size: 4em;
-    margin: 0.67em 0;
+.markdown-body {
+    font-size: 18px;
 }
 
-.markdown-body h2 {
-    font-size: 1.5em;
-    margin: 0.83em 0;
+@media (max-width: 1024px) {
+    .markdown-body {
+        font-size: 16px;
+    }
 }
 
 .markdown-body h3 {
-    font-size: 1.17em;
-    margin: 1em 0;
+    font-size: 1.65em;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin-top: 1.5em;
+    margin-bottom: 0.5em;
 }
 
 .markdown-body h4 {
-    font-size: 1em;
-    margin: 1.33em 0;
-}
-
-.markdown-body h5 {
-    font-size: 0.83em;
-    margin: 1.67em 0;
-}
-
-.markdown-body h6 {
-    font-size: 0.67em;
-    margin: 2.33em 0;
-}
-
-.markdown-body p {
-    margin: 1em 0;
+    font-size: 1.15em;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.025em;
+    margin-top: 1em;
+    margin-bottom: 0.5em;
 }
 
 .markdown-body ul,
 .markdown-body ol {
-    margin: 1em 0;
     padding-left: 2em;
 }
 
-.markdown-body li {
+.light .markdown-body li {
     margin: 0.5em 0;
+    color: #637184;
+}
+
+.dark .markdown-body li {
+    margin: 0.5em 0;
+    color: #A4ADB9;
+}
+
+.light .markdown-body li strong {
+    color: black;
+}
+
+.dark .markdown-body li strong {
+    color: whitesmoke;
+}
+
+.light .markdown-body p {
+    color: #637184;
+    width: 100%;
+}
+
+.dark .markdown-body p {
+    color: #A4ADB9;
+    width: 100%;
 }
 
 .markdown-body img {
+    margin: 1em auto;
     max-width: 100%;
     height: auto;
+    border-radius: 10px;
 }
 
-.markdown-body a {
-    color: #0366d6;
-    text-decoration: none;
+.light .markdown-body code {
+    border: 1px solid #e9e9e9;
+    background-color: #F9F9F9;
+    color: #4e5866;
+    border-radius: 5px;
+    padding: 0 5px;
+    overflow-x: auto;
 }
 
-.markdown-body a:hover {
-    text-decoration: underline;
+.dark .markdown-body code {
+    background-color: #0F172A;
+    border: 1px solid #151d2b;
+    color: #d4d8dd;
+    border-radius: 5px;
+    padding: 0 5px;
+    overflow-x: auto;
+}
+
+.light .markdown-body pre {
+    background-color: #F9F9F9;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #e9e9e9;
+    margin: 1.5em 0;
+    overflow-x: auto;
+    color: black;
+}
+
+.dark .markdown-body pre {
+    background-color: #0F172A;
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid #151d2b;
+    margin: 1.5em 0;
+    overflow-x: auto;
+}
+
+.light .markdown-body pre code {
+    border: none;
+    overflow-x: auto;
+}
+
+.dark .markdown-body pre code {
+    border: none;
+    overflow-x: auto;
 }
