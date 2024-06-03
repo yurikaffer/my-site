@@ -1,6 +1,6 @@
 export const expItems = [
     {
-        jobTitle: "Full-stack Developer",
+        jobTitle: "Full-stack Developer Pleno",
         company: "Softdata Soluções Ltda.",
         location: "Joinville, SC",
         duration: "Agosto 2022 - Agosto 2023 (1 ano)",
