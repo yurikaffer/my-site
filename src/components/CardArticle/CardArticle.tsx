@@ -15,7 +15,7 @@ const CardArticle: React.FC<CardArticleProps> = ({ img, title, description, tags
     return (
         <div 
             onClick={() => router.push(`blog/article/${article_id}`)} 
-            className={`cursor-pointer animate-entrance overflow-hidden flex flex-col rounded-large transition duration-custom w-full h-full lg:hover:-translate-y-3`}
+            className={`cursor-pointer min-h-[34rem] animate-entrance overflow-hidden flex flex-col rounded-large transition duration-custom w-full h-full lg:hover:-translate-y-3`}
         >
             <img src={img} alt={'imagem' + title} loading="lazy" className="object-cover h-[220px] w-full rounded-large" />
             <div className="pt-4 flex flex-col gap-2 p-[1rem]">

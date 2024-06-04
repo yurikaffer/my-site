@@ -95,7 +95,7 @@ const HeaderArticle = ({ article }: { article: articleProps }) => (
         </div>
         <h2 className="text-[18px] font-normal italic text-text" >{article.subtitle}</h2>
         <div className='flex text-text  gap-2 sm:gap-3 py-6 items-center text-[14px] sm:text-[16px] overflow-x-auto sm:overflow-hidden text-nowrap'>
-            <Link href={'https://www.linkedin.com/in/yuri-k-a97755133/'} className='flex items-center gap-2 dark:hover:text-white hover:text-black hover:underline'>
+            <Link href={'https://www.linkedin.com/in/yurikaffer/'} className='flex items-center gap-2 dark:hover:text-white hover:text-black hover:underline'>
                 <Avatar src="/user.jpeg" size="sm" />
                 <p>{article.author} </p>
             </Link>
