@@ -8,12 +8,12 @@ export default function Informations() {
               <p className="text-text self-center">Anos</p>
             </div>
             <div className="flex flex-col   ">
-              <span className="gradient-text text-[38px] md:text-md font-extrabold tracking-tight self-center">+2</span>
-              <p className="text-text self-center" >Anos de dev</p>
+              <span className="gradient-text text-[38px] md:text-md font-extrabold tracking-tight self-center">5</span>
+              <p className="text-text self-center" >Anos de TI</p>
             </div>
             <div className="flex flex-col  ">
-              <span className="gradient-text text-[38px] md:text-md font-extrabold tracking-tight self-center">+1K</span>
-              <p className="text-text self-center" >Commits</p>
+              <span className="gradient-text text-[38px] md:text-md font-extrabold tracking-tight self-center">3</span>
+              <p className="text-text self-center" >Anos de dev</p>
             </div>
           </div>
     
