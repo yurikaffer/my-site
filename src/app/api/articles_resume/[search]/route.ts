@@ -10,8 +10,11 @@ interface articleResumeProps {
 }
 
 export async function GET(req: NextRequest) {
-    const search = req.url?.split('/').pop()
-    console.log('search: ', search)
+    let search = req.url?.split('/').pop()
+
+    if (search) {
+        search = decodeURIComponent(search);
+    }
 
     try {
         if (!search) {
@@ -31,11 +34,7 @@ export async function GET(req: NextRequest) {
                 return categoriesMatch || introMatch || titleMatch;
             });
 
-        //if (articles.length === 0) {
-        //    return new NextResponse('Nenhum artigo encontrado!', { status: 404 })
-        //} else {
-            return new NextResponse(JSON.stringify(articles), { status: 200, headers: { 'Content-Type': 'application/json' } });
-        //}
+        return new NextResponse(JSON.stringify(articles), { status: 200, headers: { 'Content-Type': 'application/json' } });
 
     } catch (error) {
         return new NextResponse('Server error.', { status: 500 })

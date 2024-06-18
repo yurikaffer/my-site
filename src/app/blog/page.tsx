@@ -80,14 +80,14 @@ export default function Blog() {
     );
 
     return (
-        <div className="w-full flex flex-col justify-center items-center px-[1rem]">
+        <div className="w-full flex flex-col items-center px-[1rem] min-h-screen">
             <div className="flex flex-col full w-full max-w-[80rem] pt-[8rem] gap-4 ">
                 <HeaderBlog />
                 <Categories categories={categories} handleSelectCategory={handleSelectCategory} handleActiveButton={handleActiveButton} isLoading={isLoadingCategory} />
                 <SearchInput loadAllArticles={loadAllArticles} loadArticlesBySearch={loadArticlesBySearch} />
                 <ArticlesGrid articles={articles} isLoading={isLoadingArticle} />
-                <Footer />
             </div>
+            <Footer />
         </div>
     );
 }
