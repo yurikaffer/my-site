@@ -30,7 +30,7 @@ export default function Informations() {
             como uma ferramenta auxiliar para entender o mundo e o porquê das coisas.
           </p>
           <p className="text-text" >
-            Eu gosto de dizer que desde que entendi a da programação, ela tem mudado minha vida. A princípio no âmbito profissional, 
+            Eu gosto de dizer que desde que entendi a programação, ela tem mudado minha vida. A princípio no âmbito profissional, 
             abrindo portas para novas oportunidades e caminhos que eu poderia seguir, e, mais profundamente, a 
             programação e a lógica mudaram meus pensamentos e a forma em que estruturo novas ideias. Se você é um 
             desenvolvedor experiente, imagino que saiba do que estou falando. 
